@@ -1,0 +1,26 @@
+<html>
+<body>
+<pre>
+<h1>礦ision3 Build Log</h1>
+<h2>Project:</h2>
+H:\单片机资料\频谱显示\1602频谱显示\1602-FFT\1602FFT.uv2
+Project File Date:  11/29/2018
+
+<h2>Output:</h2>
+编译 1602.c ...
+1602.c - 0 个错误, 0 个警告。
+编译 display.c ...
+display.c - 0 个错误, 0 个警告。
+编译 FFT.c ...
+FFT.c - 0 个错误, 0 个警告。
+编译 main.c ...
+main.c - 0 个错误, 0 个警告。
+编译 show.c ...
+show.c - 0 个错误, 0 个警告。
+编译 main.c ...
+main.c - 0 个错误, 0 个警告。
+创建目标 '目标 1'
+连接 ...
+Program Size: data=90.1 xdata=512 code=5269
+创建 HEX 文件 "1602FFT" ...
+"1602FFT" - 0 个错误, 0 个警告。

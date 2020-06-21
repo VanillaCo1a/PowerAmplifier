@@ -1,0 +1,3 @@
+Change Component Footprint: Designator=R5 Old Footprint=RVR-4 New Footprint=RVR-A
+Change Component Comment : Designator=R5 Old Comment=50k New Comment=RPOT-1
+Added Room: Name=Sheet1

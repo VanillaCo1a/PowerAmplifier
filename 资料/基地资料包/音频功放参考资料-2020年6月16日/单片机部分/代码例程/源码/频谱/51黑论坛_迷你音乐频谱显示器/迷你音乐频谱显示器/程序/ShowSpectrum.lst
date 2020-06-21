@@ -1,0 +1,416 @@
+C51 COMPILER V9.01   SHOWSPECTRUM                                                          03/13/2011 09:29:37 PAGE 1   
+
+
+C51 COMPILER V9.01, COMPILATION OF MODULE SHOWSPECTRUM
+OBJECT MODULE PLACED IN .\Hex\ShowSpectrum.obj
+COMPILER INVOKED BY: C:\Program Files X\Keil\C51\BIN\C51.EXE src\FFTCode\ShowSpectrum.c LARGE OPTIMIZE(9,SPEED) BROWSE D
+                    -EBUG OBJECTEXTEND CODE LISTINCLUDE SYMBOLS PRINT(.\ShowSpectrum.lst) PREPRINT(.\ShowSpectrum.i) OBJECT(.\Hex\ShowSpectru
+                    -m.obj)
+
+line level    source
+
+   1          /******************************************************************
+   2             本程序只供学习使用，未经作者许可，不得用于其它任何用途
+   3          
+   4                  欢迎访问我的USB专区：http://group.ednchina.com/93/
+   5                  欢迎访问我的blog：   http://www.ednchina.com/blog/computer00
+   6                                       http://computer00.21ic.org
+   7          
+   8          ShowSpectrum.c  file
+   9          
+  10          作者：Computer-lov
+  11          建立日期: 2009-03-04
+  12          修改日期: 2009-03-10
+  13          版本：V1.0
+  14          版权所有，盗版必究。
+  15          Copyright(C) Computer-lov 2009-2019
+  16          All rights reserved
+  17          *******************************************************************/
+  18          
+  19          #include "ShowSpectrum.h"
+   1      =1  /******************************************************************
+   2      =1     本程序只供学习使用，未经作者许可，不得用于其它任何用途
+   3      =1  
+   4      =1          欢迎访问我的USB专区：http://group.ednchina.com/93/
+   5      =1          欢迎访问我的blog：   http://www.ednchina.com/blog/computer00
+   6      =1                               http://computer00.21ic.org
+   7      =1  
+   8      =1  ShowSpectrum.h file
+   9      =1  
+  10      =1  作者：Computer-lov
+  11      =1  建立日期: 2009-03-04
+  12      =1  修改日期: 2009-03-10
+  13      =1  版本：V1.0
+  14      =1  版权所有，盗版必究。
+  15      =1  Copyright(C) Computer-lov 2009-2019
+  16      =1  All rights reserved
+  17      =1  *******************************************************************/
+  18      =1  
+  19      =1  
+  20      =1  #ifndef __SHOW_SPECTRUM_H__
+  21      =1  #define __SHOW_SPECTRUM_H__
+  22      =1  
+  23      =1  #include "MyType.h"
+   1      =2  /******************************************************************
+   2      =2     本程序只供学习使用，未经作者许可，不得用于其它任何用途
+   3      =2                          
+   4      =2          欢迎访问我的USB专区：http://group.ednchina.com/93/
+   5      =2          欢迎访问我的blog：   http://www.ednchina.com/blog/computer00
+   6      =2                               http://computer00.21ic.org
+   7      =2  
+   8      =2  MyType.h file
+   9      =2  
+  10      =2  作者：电脑圈圈
+  11      =2  建立日期: 2008.06.27
+C51 COMPILER V9.01   SHOWSPECTRUM                                                          03/13/2011 09:29:37 PAGE 2   
+
+  12      =2  修改日期: 2008.06.27
+  13      =2  版本：V1.1
+  14      =2  版权所有，盗版必究。
+  15      =2  Copyright(C) 电脑圈圈 2008-2018
+  16      =2  All rights reserved            
+  17      =2  *******************************************************************/
+  18      =2  
+  19      =2  #ifndef __MY_TYPE_H__
+  20      =2  #define __MY_TYPE_H__
+  21      =2  
+  22      =2  #define uint8    unsigned char
+  23      =2  #define uint16   unsigned short int
+  24      =2  #define uint32   unsigned long int
+  25      =2  #define int8     signed char
+  26      =2  #define int16    signed short int
+  27      =2  #define int32    signed long int
+  28      =2  #define uint64   unsigned long long int
+  29      =2  #define int64    signed long long int
+  30      =2  
+  31      =2  #endif
+  24      =1  #include "FFT.h"
+   1      =2  /******************************************************************
+   2      =2     本程序只供学习使用，未经作者许可，不得用于其它任何用途
+   3      =2     
+   4      =2          欢迎访问我的USB专区：http://group.ednchina.com/93/
+   5      =2            欢迎访问我的blog：   http://www.ednchina.com/blog/computer00
+   6      =2                                 http://computer00.21ic.org
+   7      =2                                 
+   8      =2  FFT.h file
+   9      =2                                
+  10      =2  作者：Computer-lov
+  11      =2  建立日期: 2009-03-06
+  12      =2  修改日期: 2009-03-06
+  13      =2  版本：V1.0
+  14      =2  版权所有，盗版必究。
+  15      =2  Copyright(C) Computer-lov 2009-2019
+  16      =2  All rights reserved
+  17      =2  *******************************************************************/
+  18      =2  
+  19      =2  #ifndef __FFT_H__
+  20      =2  #define __FFT_H__
+  21      =2  
+  22      =2  #include <math.h>
+   1      =3  /*--------------------------------------------------------------------------
+   2      =3  MATH.H
+   3      =3  
+   4      =3  Prototypes for mathematic functions.
+   5      =3  Copyright (c) 1988-2002 Keil Elektronik GmbH and Keil Software, Inc.
+   6      =3  All rights reserved.
+   7      =3  --------------------------------------------------------------------------*/
+   8      =3  
+   9      =3  #ifndef __MATH_H__
+  10      =3  #define __MATH_H__
+  11      =3  
+  12      =3  #pragma SAVE
+  13      =3  #pragma REGPARMS
+  14      =3  extern char  cabs  (char  val);
+  15      =3  extern int    abs  (int   val);
+  16      =3  extern long  labs  (long  val);
+  17      =3  extern float fabs  (float val);
+  18      =3  extern float sqrt  (float val);
+  19      =3  extern float exp   (float val);
+C51 COMPILER V9.01   SHOWSPECTRUM                                                          03/13/2011 09:29:37 PAGE 3   
+
+  20      =3  extern float log   (float val);
+  21      =3  extern float log10 (float val);
+  22      =3  extern float sin   (float val);
+  23      =3  extern float cos   (float val);
+  24      =3  extern float tan   (float val);
+  25      =3  extern float asin  (float val);
+  26      =3  extern float acos  (float val);
+  27      =3  extern float atan  (float val);
+  28      =3  extern float sinh  (float val);
+  29      =3  extern float cosh  (float val);
+  30      =3  extern float tanh  (float val);
+  31      =3  extern float atan2 (float y, float x);
+  32      =3  
+  33      =3  extern float ceil  (float val);
+  34      =3  extern float floor (float val);
+  35      =3  extern float modf  (float val, float *n);
+  36      =3  extern float fmod  (float x, float y);
+  37      =3  extern float pow   (float x, float y);
+  38      =3  
+  39      =3  #pragma RESTORE
+  40      =3  
+  41      =3  #endif
+  23      =2  
+  24      =2  //定义做FFT的点数
+  25      =2  #define LENGTH 128
+  26      =2  //定义这么多点的FFT需要多少个二进制位
+  27      =2  //bL=log2(LENGTH)
+  28      =2  #define bL 9
+  29      =2  
+  30      =2  #define IN_TYPE  short int
+  31      =2  #define OUT_TYPE long int
+  32      =2  #define LEN_TYPE short int
+  33      =2  
+  34      =2  #define PI 3.1415926535897932384626433832795
+  35      =2  
+  36      =2  void InitBitRev(void);
+  37      =2  void FftInput(IN_TYPE *pIn);
+  38      =2  void FftExe(IN_TYPE *pIn, OUT_TYPE *pRe, OUT_TYPE *pIm);
+  39      =2  void DftExe(IN_TYPE *pIn, OUT_TYPE *pRe, OUT_TYPE *pIm);
+  40      =2  
+  41      =2  #endif
+  25      =1  
+  26      =1  void ShowSpectrum(void);
+  27      =1  
+  28      =1  extern int16 AudioInBuf[650];   //需要采样512点
+  29      =1  extern uint32 AudioInByteCount;  //输出字节计数器
+  30      =1  
+  31      =1  #endif
+  20          //#include "Lcd.h"
+  21          
+  22          OUT_TYPE Re[LENGTH];
+  23          OUT_TYPE Im[LENGTH];
+  24          
+  25          unsigned char Peak[64];
+  26          unsigned char PeakTime[64];
+  27          
+  28          #define MAX_HEIGHT 8//39
+  29          #define HOLD_TIME 3   //峰值保留时间//3
+  30          
+  31          /********************************************************************
+  32          函数功能：对需要显示的峰值进行处理。
+  33          入口参数：x：横坐标；y：纵坐标值。
+C51 COMPILER V9.01   SHOWSPECTRUM                                                          03/13/2011 09:29:37 PAGE 4   
+
+  34          返    回：无。
+  35          备    注：无。
+  36          ********************************************************************/
+  37          void ProcPeak(unsigned char x, unsigned char y)
+  38          {
+  39   1       if(PeakTime[x]>0)
+  40   1       {
+  41   2        PeakTime[x]--;
+  42   2       }
+  43   1       else
+  44   1       {
+  45   2        if(Peak[x]<MAX_HEIGHT)Peak[x]+=2;
+  46   2       }
+  47   1       if(y<Peak[x])
+  48   1       {
+  49   2        Peak[x]=y; //修改峰值
+  50   2        PeakTime[x]=HOLD_TIME; //保持
+  51   2       }
+  52   1      }
+  53          /////////////////////////End of function/////////////////////////////
+  54          
+  55          /********************************************************************
+  56          函数功能：幅度压缩。
+  57          入口参数：y：输入的幅度。
+  58          返    回：无。
+  59          备    注：压缩后的幅度。
+  60          ********************************************************************/
+  61          int Compress(int y)
+  62          {
+  63   1       return sqrt(y);  //开根号压缩
+  64   1      }
+  65          /////////////////////////End of function/////////////////////////////
+  66          
+  67          /********************************************************************
+  68          函数功能：在LCD上显示频谱。
+  69          入口参数：无。
+  70          返    回：无。
+  71          备    注：无。
+  72          ********************************************************************/
+  73          void ShowSpectrum(void)
+  74          {
+  75   1       int i,x,y,j,p;
+  76   1       
+  77   1       //对输入信号进行缩小
+  78   1       //for(i=0;i<LENGTH;i++)
+  79   1       {
+  80   2        //AudioInBuf[i]*=40;
+  81   2       }
+  82   1       
+  83   1       FftInput(AudioInBuf);       //位倒序
+  84   1       FftExe(AudioInBuf,Re,Im);   //做FFT运算
+  85   1        
+  86   1       //Lcd_ClearScr( (0x00<<11) | (0x00<<5) | (0x00) );     //清屏
+  87   1       //Lcd_ClearScr(RGB( 0xFF,0xFF,0xFF));    
+  88   1      /* 
+  89   1       //显示X、Y轴坐标
+  90   1       LcdSetPoint(0,35);
+  91   1       LcdPrints("0V");
+  92   1       LcdDrawLine(13,39,15,39);
+  93   1       LcdSetPoint(0,23);
+  94   1       LcdPrints("1V");
+  95   1       LcdDrawLine(13,27,15,27);
+C51 COMPILER V9.01   SHOWSPECTRUM                                                          03/13/2011 09:29:37 PAGE 5   
+
+  96   1       LcdSetPoint(0,11);
+  97   1       LcdPrints("2V");
+  98   1       LcdDrawLine(13,15,15,15);
+  99   1       LcdSetPoint(0,0);
+ 100   1       LcdPrints("3V");
+ 101   1       LcdDrawLine(13,3,15,3);
+ 102   1       
+ 103   1       LcdSetPoint(14,40);
+ 104   1       LcdPrints("0");
+ 105   1       LcdSetPoint(13+26,40);
+ 106   1       LcdPrints("3K");
+ 107   1       LcdSetPoint(84-20,40);
+ 108   1       LcdPrints("16K");
+ 109   1       */
+ 110   1       
+ 111   1      // Beep(4000, 20);
+ 112   1       //直流分量直接显示
+ 113   1       x=17;
+ 114   1       y=MAX_HEIGHT-(Re[0]*MAX_HEIGHT/LENGTH)/1024;
+ 115   1        ProcPeak(0,y); //处理峰值
+ 116   1       Glib_Line(x,y,x,MAX_HEIGHT,RGBS);
+*** WARNING C206 IN LINE 116 OF SRC\FFTCODE\SHOWSPECTRUM.C: 'Glib_Line': missing function-prototype
+*** ERROR C267 IN LINE 116 OF SRC\FFTCODE\SHOWSPECTRUM.C: 'Glib_Line': requires ANSI-style prototype
+*** ERROR C202 IN LINE 116 OF SRC\FFTCODE\SHOWSPECTRUM.C: 'RGBS': undefined identifier
+ 117   1        Glib_Line(x+1,y,x+1,MAX_HEIGHT,RGBS);   
+*** ERROR C202 IN LINE 117 OF SRC\FFTCODE\SHOWSPECTRUM.C: 'RGBS': undefined identifier
+ 118   1      
+ 119   1      
+ 120   1       //每1点显示
+ 121   1       for(i=1;i<14;i++)
+ 122   1       {
+ 123   2         x+=3;
+ 124   2        y=sqrt(Re[i]*Re[i]+Im[i]*Im[i]);   //计算模值
+ 125   2        y/=10;
+ 126   2        y=Compress(y);  //压缩
+ 127   2        y=MAX_HEIGHT-y;  //换算为屏幕y轴位置
+ 128   2        ProcPeak(i,y); //处理峰值
+ 129   2         Glib_Line(x,y,x,MAX_HEIGHT,RGBS);   //画线
+*** ERROR C202 IN LINE 129 OF SRC\FFTCODE\SHOWSPECTRUM.C: 'RGBS': undefined identifier
+ 130   2         Glib_Line(x+1,y,x+1,MAX_HEIGHT,RGBS);   
+*** ERROR C202 IN LINE 130 OF SRC\FFTCODE\SHOWSPECTRUM.C: 'RGBS': undefined identifier
+ 131   2       }
+ 132   1       
+ 133   1       //每2点显示
+ 134   1       p=14;
+ 135   1       for(i=14;i<24;i++)
+ 136   1       {
+ 137   2        x+=3;
+ 138   2        y=0;
+ 139   2        for(j=0;j<2;j++)
+ 140   2        {
+ 141   3         y+=sqrt(Re[p]*Re[p]+Im[p]*Im[p]);   //计算模值
+ 142   3         p++;
+ 143   3        }
+ 144   2        y/=20; //取平均值
+ 145   2        y=Compress(y);  //压缩
+ 146   2        y=MAX_HEIGHT-y;  //换算为屏幕y轴位置
+ 147   2        ProcPeak(i,y); //处理峰值
+ 148   2        Glib_Line(x,y,x,MAX_HEIGHT,RGBS); //画线
+*** ERROR C202 IN LINE 148 OF SRC\FFTCODE\SHOWSPECTRUM.C: 'RGBS': undefined identifier
+ 149   2        Glib_Line(x+1,y,x+1,MAX_HEIGHT,RGBS);   
+*** ERROR C202 IN LINE 149 OF SRC\FFTCODE\SHOWSPECTRUM.C: 'RGBS': undefined identifier
+C51 COMPILER V9.01   SHOWSPECTRUM                                                          03/13/2011 09:29:37 PAGE 6   
+
+ 150   2       }
+ 151   1      
+ 152   1       //每3点显示
+ 153   1       for(i=24;i<34;i++)
+ 154   1       {
+ 155   2        x+=3;
+ 156   2        y=0;
+ 157   2        for(j=0;j<3;j++)
+ 158   2        {
+ 159   3         y+=sqrt(Re[p]*Re[p]+Im[p]*Im[p]);   //计算模值
+ 160   3         p++;
+ 161   3        }
+ 162   2        y/=30; //取平均值
+ 163   2        y=Compress(y);  //压缩
+ 164   2        y=MAX_HEIGHT-y;  //换算为屏幕y轴位置
+ 165   2        ProcPeak(i,y); //处理峰值
+ 166   2         Glib_Line(x,y,x,MAX_HEIGHT,RGBS);   //画线
+*** ERROR C202 IN LINE 166 OF SRC\FFTCODE\SHOWSPECTRUM.C: 'RGBS': undefined identifier
+ 167   2         Glib_Line(x+1,y,x+1,MAX_HEIGHT,RGBS);   
+*** ERROR C202 IN LINE 167 OF SRC\FFTCODE\SHOWSPECTRUM.C: 'RGBS': undefined identifier
+ 168   2       }
+ 169   1      
+ 170   1       //每4点显示
+ 171   1       for(i=34;i<44;i++)
+ 172   1       {
+ 173   2        x+=3;
+ 174   2        y=0;
+ 175   2        for(j=0;j<4;j++)
+ 176   2        {
+ 177   3         y+=sqrt(Re[p]*Re[p]+Im[p]*Im[p]);   //计算模值
+ 178   3         p++;
+ 179   3        }
+ 180   2        y/=40; //取平均值
+ 181   2        y=Compress(y);  //压缩
+ 182   2        y=MAX_HEIGHT-y;  //换算为屏幕y轴位置
+ 183   2        ProcPeak(i,y); //处理峰值
+ 184   2        Glib_Line(x,y,x,MAX_HEIGHT,RGBS);    //画线
+*** ERROR C202 IN LINE 184 OF SRC\FFTCODE\SHOWSPECTRUM.C: 'RGBS': undefined identifier
+ 185   2        Glib_Line(x+1,y,x+1,MAX_HEIGHT,RGBS);   
+*** ERROR C202 IN LINE 185 OF SRC\FFTCODE\SHOWSPECTRUM.C: 'RGBS': undefined identifier
+ 186   2       }
+ 187   1       
+ 188   1       //每6点显示
+ 189   1       for(i=44;i<54;i++)
+ 190   1       {
+ 191   2        x+=3;
+ 192   2        y=0;
+ 193   2        for(j=0;j<6;j++)
+ 194   2        {
+ 195   3         y+=sqrt(Re[p]*Re[p]+Im[p]*Im[p]);   //计算模值
+ 196   3         p++;
+ 197   3        }
+ 198   2        y/=60; //取平均值
+ 199   2        y=Compress(y);  //压缩
+ 200   2        y=MAX_HEIGHT-y;  //换算为屏幕y轴位置
+ 201   2        ProcPeak(i,y); //处理峰值
+ 202   2         Glib_Line(x,y,x,MAX_HEIGHT,RGBS);    //画线
+*** ERROR C202 IN LINE 202 OF SRC\FFTCODE\SHOWSPECTRUM.C: 'RGBS': undefined identifier
+ 203   2         Glib_Line(x+1,y,x+1,MAX_HEIGHT,RGBS);   
+*** ERROR C202 IN LINE 203 OF SRC\FFTCODE\SHOWSPECTRUM.C: 'RGBS': undefined identifier
+ 204   2       }
+ 205   1       
+C51 COMPILER V9.01   SHOWSPECTRUM                                                          03/13/2011 09:29:37 PAGE 7   
+
+ 206   1       //每9点显示
+ 207   1       for(i=54;i<64;i++)
+ 208   1       {
+ 209   2        x+=3;
+ 210   2        y=0;
+ 211   2        for(j=0;j<9;j++)
+ 212   2        {
+ 213   3         y+=sqrt(Re[p]*Re[p]+Im[p]*Im[p]);   //计算模值
+ 214   3         p++;
+ 215   3        }
+ 216   2        y/=90; //取平均值
+ 217   2        y=Compress(y);  //压缩
+ 218   2        y=MAX_HEIGHT-y;  //换算为屏幕y轴位置
+ 219   2        ProcPeak(i,y);   //处理峰值
+ 220   2         Glib_Line(x,y,x,MAX_HEIGHT,RGBS);   //画线
+*** ERROR C202 IN LINE 220 OF SRC\FFTCODE\SHOWSPECTRUM.C: 'RGBS': undefined identifier
+ 221   2         Glib_Line(x+1,y,x+1,MAX_HEIGHT,RGBS);   
+*** ERROR C202 IN LINE 221 OF SRC\FFTCODE\SHOWSPECTRUM.C: 'RGBS': undefined identifier
+ 222   2       }
+ 223   1       
+ 224   1       for(i=0;i<64;i++)
+ 225   1       {
+ 226   2        PutPixel(i*3+17,Peak[i],RGB(0x0F,0x0F,0x00));
+ 227   2        PutPixel(i*3+17+1,Peak[i],RGB( 0x0F,0x0F,0x00));
+ 228   2       }
+ 229   1      // LcdRefresh(); //刷新
+ 230   1      }
+ 231          /////////////////////////End of function/////////////////////////////
+
+C51 COMPILATION COMPLETE.  1 WARNING(S),  15 ERROR(S)

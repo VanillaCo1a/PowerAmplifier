@@ -1,0 +1,339 @@
+C51 COMPILER V9.00   V1_1                                                                  05/10/2015 21:46:24 PAGE 1   
+
+
+C51 COMPILER V9.00, COMPILATION OF MODULE V1_1
+OBJECT MODULE PLACED IN V1.1.OBJ
+COMPILER INVOKED BY: d:\Keil\C51\BIN\C51.EXE V1.1.c LARGE BROWSE DEBUG OBJECTEXTEND
+
+line level    source
+
+   1          #include "STC15F2K60S2.H"                
+   2          #include "intrins.h"      
+   3          #include "math.h"
+   4          #include"data_define.h"
+   5          sbit Rest = P3^0;
+   6          #define LEDS0 P0
+   7          #define LEDS1 P2
+   8          #define Clear 0x00;
+   9          #define ADC_POWER   0x80            //ADC power control bit
+  10          #define ADC_FLAG    0x10            //ADC complete flag
+  11          #define ADC_START   0x08            //ADC start control bit
+  12          #define ADC_SPEEDLL 0x00            //420 clocks
+  13          #define ADC_SPEEDL  0x20            //280 clocks
+  14          #define ADC_SPEEDH  0x40            //140 clocks
+  15          #define ADC_SPEEDHH 0x60            //70 clocks
+  16          #define tmp_Max                             8                      //最大值（LED高度）
+  17          #define ADC_sensitivity                 1
+  18          #define Process_sensitivity             4                
+  19          uByte idata refreshflag[16];
+  20          uByte idata LEDBuf[16]; 
+  21          uByte code LED_table[]={0x00,0x01,0x03,0x07,0x0f,0x1f,0x3f,0x7f,0xff};
+  22          uByte code LEDS_tab[]={0xfe,0xfd,0xfb,0xf7,0xef,0xdf,0xbf,0x7f};
+  23          uByte code Light_tab[]={0x01,0x02,0x04,0x08,0x10,0x20,0x40,0x80};
+  24          struct compx
+  25          {
+  26                  float real;
+  27                  float imag;
+  28          };
+  29          struct compx ADC_buf[65];
+  30          data struct compx temp; 
+  31          code float iw[64]=
+  32          {
+  33                   1.0000, 0     , 0.9952,-0.0980, 0.9808,-0.1951, 0.9569,-0.2903,
+  34                   0.9239,-0.3827, 0.8819,-0.4714, 0.8315,-0.5556, 0.7730,-0.6344,
+  35                   0.7071,-0.7071, 0.6344,-0.7730, 0.5556,-0.8315, 0.4714,-0.8819,
+  36                   0.3827,-0.9239, 0.2903,-0.9569, 0.1951,-0.9808, 0.0980,-0.9952,
+  37                   0.0   ,-1.0000,-0.0980,-0.9952,-0.1951,-0.9808,-0.2903, 0.9569,
+  38                  -0.3827,-0.9239,-0.4714,-0.8819,-0.5556,-0.8315,-0.6344,-0.7730,
+  39                  -0.7071,-0.7071,-0.7730,-0.6344,-0.8315,-0.5556,-0.8819,-0.4714,
+  40                  -0.9239,-0.3827,-0.9569,-0.2903,-0.9808,-0.1951,-0.9952,-0.0980
+  41          };
+  42          
+  43          uByte xdata vv[16], vvd[16];
+  44          float xdata tempOUTADC_buf[16];
+  45          
+  46          void Delay100us();
+  47          void Delay(uWord n);
+  48          void IOINIT(void);
+  49          void Spectrum_diplay();
+  50          void Timer1Init(void);
+  51          void InitADC();
+  52          void initfft(void);
+  53          void ee(struct compx b1,uByte data b2);
+  54          void fft(struct compx *xin,uByte data N);
+  55          void processfft(void);
+C51 COMPILER V9.00   V1_1                                                                  05/10/2015 21:46:24 PAGE 2   
+
+  56          uByte GetADCResult(uByte ch);
+  57          uWord mypow(uByte data nbottom,uByte data ntop);
+  58          
+  59          
+  60          void Main()
+  61          {  
+  62   1              uByte data i;
+  63   1              IOINIT();
+  64   1              InitADC();
+  65   1              Timer1Init();                   
+  66   1              initfft();
+  67   1              while(1)
+  68   1              {
+  69   2                      if(Rest==0)IAP_CONTR=0x60;
+  70   2              
+  71   2                      for(i=0;i<65;i++)
+  72   2                      {  
+  73   3                              ADC_buf[i].real=(GetADCResult(6)+GetADCResult(7))<<ADC_sensitivity      ;         
+  74   3                      }
+  75   2                              processfft();           
+  76   2              
+  77   2              
+  78   2              } 
+  79   1      }
+  80          
+  81          void IOINIT(void)
+  82          {                                                                       
+  83   1              
+  84   1              P1M1 = 0xc0; 
+  85   1              P1M0 = 0x00;     
+  86   1              P3M1 = 0x00;    
+  87   1              P3M0 = 0xff;          
+  88   1              P1ASF =0xc0;                                                    //将P16,P17的IO设置为模拟输入功能；       
+  89   1      }
+  90          
+  91          void Spectrum_diplay()
+  92          {                                       
+  93   1              uByte data i,j;
+  94   1      
+  95   1                              P0M1=0x00;              //A组8*8初始化
+  96   1                              P0M0=0xff;
+  97   1                              P2M1=0xff;         
+  98   1                              P2M0=0xff;
+  99   1                                              
+ 100   1                              for(i=0;i<8;i++)
+ 101   1                              {
+ 102   2                                      LEDS1=LEDS_tab[i];
+ 103   2                                      for(j=0;j<8;j++)
+ 104   2                                      {
+ 105   3                                              LEDS0=LED_table[LEDBuf[i]]&Light_tab[j];
+ 106   3                                              Delay100us();
+ 107   3                                              LEDS0=Clear;
+ 108   3                                      }
+ 109   2                              }
+ 110   1                              LEDS0=Clear;
+ 111   1                              LEDS1=Clear;
+ 112   1      
+ 113   1                              P0M1=0xff;              //B组8*8初始化
+ 114   1                              P0M0=0xff;
+ 115   1                              P2M1=0x00;         
+ 116   1                              P2M0=0xff;
+ 117   1      
+C51 COMPILER V9.00   V1_1                                                                  05/10/2015 21:46:24 PAGE 3   
+
+ 118   1                              for(i=0;i<8;i++)
+ 119   1                              {
+ 120   2                                      LEDS0=LEDS_tab[i];
+ 121   2                                      for(j=0;j<8;j++)
+ 122   2                                      {
+ 123   3                                              LEDS1=LED_table[LEDBuf[i+8]]&Light_tab[j];
+ 124   3                                              Delay100us();
+ 125   3                                              LEDS1=Clear;
+ 126   3                                      }
+ 127   2                              }
+ 128   1      
+ 129   1                              LEDS1=Clear;
+ 130   1                              LEDS0=Clear;
+ 131   1      }
+ 132          void LEDRefresh_INT() interrupt 3  using 1
+ 133          {  
+ 134   1              Spectrum_diplay();
+ 135   1      }  
+ 136          
+ 137          void Timer1Init(void)           //@33.1776MHz
+ 138          {
+ 139   1              EA=1;
+ 140   1              ET1 = 1;     //T/C1中断开
+ 141   1              AUXR &= 0xbf;           //定时器时钟1T模式
+ 142   1              TMOD = 0x00;            //设置定时器模式
+ 143   1              TL1 = 0x00;             //设置定时初值
+ 144   1              TH1 = 0x10;             //设置定时初值
+ 145   1              TF1 = 0;                //清除TF1标志
+ 146   1              TR1 = 1;                //定时器1开始计时
+ 147   1      }
+ 148          void InitADC()
+ 149          {
+ 150   1          ADC_RES = 0;                   
+ 151   1          ADC_CONTR = ADC_POWER | ADC_SPEEDLL;
+ 152   1          Delay(2);                       
+ 153   1      }
+ 154          
+ 155          uByte GetADCResult(uByte ch)
+ 156          {
+ 157   1          ADC_CONTR = ADC_POWER | ADC_SPEEDLL | ch | ADC_START;
+ 158   1          _nop_();                        
+ 159   1          _nop_();
+ 160   1          _nop_();
+ 161   1          _nop_();
+ 162   1          while (!(ADC_CONTR & ADC_FLAG));
+ 163   1          ADC_CONTR &= ~ADC_FLAG;         
+ 164   1      
+ 165   1          return (ADC_RES);                
+ 166   1      }
+ 167          
+ 168          void Delay(uWord n)
+ 169          {
+ 170   1          uWord x;
+ 171   1      
+ 172   1          while (n--)
+ 173   1              {
+ 174   2              x = 5000;
+ 175   2              while (x--);
+ 176   2          }
+ 177   1      }
+ 178          
+ 179          void initfft(void)
+C51 COMPILER V9.00   V1_1                                                                  05/10/2015 21:46:24 PAGE 4   
+
+ 180          {
+ 181   1              uByte i;
+ 182   1              for(i=0;i<16;i++){
+ 183   2                      refreshflag[i]=0;
+ 184   2                      vv[i]= 0;
+ 185   2                      vvd[i]= 0;
+ 186   2              }
+ 187   1      } 
+ 188          
+ 189          void ee(struct compx b1,uByte data b2)
+ 190          { 
+ 191   1              temp.real=b1.real*iw[2*b2]-b1.imag*iw[2*b2+1];
+ 192   1              temp.imag=b1.real*iw[2*b2+1]+b1.imag*iw[2*b2]; 
+ 193   1      }
+ 194          
+ 195          uWord mypow(uByte data nbottom,uByte data ntop)
+ 196          {
+ 197   1          uWord data result=1;
+ 198   1          uByte data t;    
+ 199   1          for(t=0;t<ntop;t++)result*=nbottom; 
+ 200   1          return result;
+ 201   1      }
+ 202          
+ 203          void fft(struct compx *xin,uByte data N)
+ 204          {
+ 205   1              uByte data  fftnum,i,j,k,l,m,n,disbuff,dispos,dissec;
+ 206   1              data struct compx t;
+ 207   1              fftnum=N;                         
+ 208   1              for(m=1;(fftnum=fftnum/2)!=1;m++);
+ 209   1              for(k=0;k<=N-1;k++){               
+ 210   2                      n=k;
+ 211   2                      j=0; 
+ 212   2                      for(i=m;i>0;i--){             
+ 213   3                              j=j+((n%2)<<(i-1));
+ 214   3                              n=n/2;
+ 215   3                      } 
+ 216   2                      if(k<j){t=xin[1+j];xin[1+j]=xin[1+k];xin[1+k]=t;}
+ 217   2              }  
+ 218   1              for(l=1;l<=m;l++){               
+ 219   2                      disbuff=mypow(2,l);         
+ 220   2                      dispos=disbuff/2;            
+ 221   2                      for(j=1;j<=dispos;j++){
+ 222   3                              for(i=j;i<N;i=i+disbuff){ 
+ 223   4                                      dissec=i+dispos;    
+ 224   4                                      ee(xin[dissec],(uWord)(j-1)*(uWord)N/disbuff);
+ 225   4                                      t=temp;
+ 226   4                                      xin[dissec].real=xin[i].real-t.real;
+ 227   4                                      xin[dissec].imag=xin[i].imag-t.imag;
+ 228   4                                      xin[i].real=xin[i].real+t.real;
+ 229   4                                      xin[i].imag=xin[i].imag+t.imag;
+ 230   4                              }
+ 231   3                      }
+ 232   2              }
+ 233   1      }
+ 234          
+ 235          void processfft(void)
+ 236          { 
+ 237   1          uByte data pt=0,tmp,i,p,p1,p2; 
+ 238   1          for(pt=0;pt<65;pt++){
+ 239   2              ADC_buf[pt].imag=0;                 
+ 240   2          }
+ 241   1          fft(ADC_buf,64);                      
+C51 COMPILER V9.00   V1_1                                                                  05/10/2015 21:46:24 PAGE 5   
+
+ 242   1               
+ 243   1          for(pt=2,i=0;pt<34;pt+=2){                                      
+ 244   2              tempOUTADC_buf[i++] = sqrt(ADC_buf[pt].real*ADC_buf[pt].real+ADC_buf[pt].imag*ADC_buf[pt].imag);//
+             -取均方根 
+ 245   2          }
+ 246   1      
+ 247   1      
+ 248   1              for(i=0,pt=15;i<16;i++,pt--)
+ 249   1              { 
+ 250   2               tmp = ((uByte)tempOUTADC_buf[i]) >> Process_sensitivity;
+ 251   2      
+ 252   2      if(tmp<=1)tmp=0;      
+ 253   2      if(tmp>p)
+ 254   2      {
+ 255   3      p1=(tmp-p);
+ 256   3      if(p1>3)
+ 257   3      {
+ 258   4      p2=(p1-3);
+ 259   4      tmp=(tmp-p2);
+ 260   4      p=tmp;
+ 261   4      }
+ 262   3      }
+ 263   2      if(tmp<p)
+ 264   2      {
+ 265   3      p1=(p-tmp);
+ 266   3      if(p1>3)
+ 267   3      {
+ 268   4      p2=(p1-3);
+ 269   4      tmp=(tmp+p2);
+ 270   4      p=tmp;
+ 271   4      }
+ 272   3      } 
+ 273   2                      
+ 274   2      
+ 275   2                      if(refreshflag[i] <= tmp)
+ 276   2                      {                          
+ 277   3                              refreshflag[i] = tmp;
+ 278   3                      }else
+ 279   2                      {
+ 280   3                              if(refreshflag[i]>0)refreshflag[i]--;   
+ 281   3                              tmp = refreshflag[i];
+ 282   3                      }
+ 283   2                      if(tmp>tmp_Max)tmp = tmp_Max;                                                   
+ 284   2              
+ 285   2                              LEDBuf[i] = tmp;
+ 286   2              }
+ 287   1      }
+ 288          
+ 289          void Delay100us()               //@33.1776MHz
+ 290          {
+ 291   1              unsigned char i, j;
+ 292   1      
+ 293   1              _nop_();
+ 294   1              _nop_();
+ 295   1              i = 4;
+ 296   1              j = 54;
+ 297   1              do
+ 298   1              {
+ 299   2                      while (--j);
+ 300   2              } while (--i);
+ 301   1      
+ 302   1      }
+C51 COMPILER V9.00   V1_1                                                                  05/10/2015 21:46:24 PAGE 6   
+
+ 303          
+ 304          
+ 305          
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =   1745    ----
+   CONSTANT SIZE    =    281    ----
+   XDATA SIZE       =    616      13
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =      8      30
+   IDATA SIZE       =     32    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

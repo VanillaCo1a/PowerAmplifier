@@ -1,0 +1,9 @@
+Added Component: Designator=排针1(2P-200)
+Added Component: Designator=排针2(2P-200)
+Added Pin To Net: NetName=GND Pin=排针1-1
+Added Pin To Net: NetName=GND Pin=排针1-2
+Added Pin To Net: NetName=GND Pin=排针2-1
+Added Pin To Net: NetName=GND Pin=排针2-2
+Added Member To Class: ClassName=单片机供电 Member=Component 排针1 CON2
+Added Member To Class: ClassName=单片机供电 Member=Component 排针2 CON2
+Added Room: Name=单片机供电

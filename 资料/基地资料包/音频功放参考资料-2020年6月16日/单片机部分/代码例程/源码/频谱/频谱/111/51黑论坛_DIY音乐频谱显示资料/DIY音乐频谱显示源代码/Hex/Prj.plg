@@ -1,0 +1,20 @@
+<html>
+<body>
+<pre>
+<h1>礦ision Build Log</h1>
+<h2>Project:</h2>
+C:\Users\ForeverTop\Desktop\张孝虎_投稿V2_[手把手教你用51单片机DIY音乐频谱显示]\手把手教你用51单片机DIY音乐频谱显示miniFFT_源代码\Prj.uvproj
+Project File Date:  03/26/2011
+
+<h2>Output:</h2>
+Build target 'Target 1'
+compiling prj.c...
+assembling STARTUP.A51...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SHOWRESULT?PRJ
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?INITUART?PRJ
+Program Size: data=132.0 xdata=537 code=4842
+creating hex file from ".\Hex\Prj"...
+".\Hex\Prj" - 0 Error(s), 2 Warning(s).

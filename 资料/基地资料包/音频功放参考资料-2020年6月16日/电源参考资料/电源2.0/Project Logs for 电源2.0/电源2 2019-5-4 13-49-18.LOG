@@ -1,0 +1,64 @@
+Added Component: Designator=+18(2P-200)
+Added Component: Designator=+24v(2P-200)
+Added Component: Designator=-18(2P-200)
+Added Component: Designator=-24v(2P-200)
+Added Component: Designator=104(CAP2)
+Added Component: Designator=7818(TO-220)
+Added Component: Designator=7918(TO-220)
+Added Component: Designator=BR1(D1)
+Added Component: Designator=C1(CAP2)
+Added Component: Designator=C2(CAO1)
+Added Component: Designator=C3(CAP2)
+Added Component: Designator=C5(CAP2)
+Added Component: Designator=C6(CAO1)
+Added Component: Designator=C14(CAO1)
+Added Component: Designator=C16(CAO1)
+Added Component: Designator=GND2(2P-200)
+Added Component: Designator=GND(2P-200)
+Added Pin To Net: NetName=+18 Pin=+18-1
+Added Pin To Net: NetName=+18 Pin=+18-2
+Added Pin To Net: NetName=+18 Pin=7818-3
+Added Pin To Net: NetName=+18 Pin=C1-1
+Added Pin To Net: NetName=+18 Pin=C2-1
+Added Net: Name=+18
+Added Pin To Net: NetName=+24 Pin=7818-1
+Added Pin To Net: NetName=+24 Pin=BR1-4
+Added Pin To Net: NetName=+24 Pin=C3-1
+Added Pin To Net: NetName=+24 Pin=C14-1
+Added Net: Name=+24
+Added Pin To Net: NetName=-18 Pin=-18-1
+Added Pin To Net: NetName=-18 Pin=-18-2
+Added Pin To Net: NetName=-18 Pin=7918-3
+Added Pin To Net: NetName=-18 Pin=C5-2
+Added Pin To Net: NetName=-18 Pin=C6-2
+Added Net: Name=-18
+Added Pin To Net: NetName=-24 Pin=104-2
+Added Pin To Net: NetName=-24 Pin=7918-2
+Added Pin To Net: NetName=-24 Pin=BR1-3
+Added Pin To Net: NetName=-24 Pin=C16-2
+Added Net: Name=-24
+Added Pin To Net: NetName=GND Pin=104-1
+Added Pin To Net: NetName=GND Pin=7818-2
+Added Pin To Net: NetName=GND Pin=7918-1
+Added Pin To Net: NetName=GND Pin=C1-2
+Added Pin To Net: NetName=GND Pin=C2-2
+Added Pin To Net: NetName=GND Pin=C3-2
+Added Pin To Net: NetName=GND Pin=C5-1
+Added Pin To Net: NetName=GND Pin=C6-1
+Added Pin To Net: NetName=GND Pin=C14-2
+Added Pin To Net: NetName=GND Pin=C16-1
+Added Pin To Net: NetName=GND Pin=GND2-1
+Added Pin To Net: NetName=GND Pin=GND2-2
+Added Pin To Net: NetName=GND Pin=GND-1
+Added Pin To Net: NetName=GND Pin=GND-2
+Added Net: Name=GND
+Added Pin To Net: NetName=Net+24v_1 Pin=+24v-1
+Added Pin To Net: NetName=Net+24v_1 Pin=+24v-2
+Added Pin To Net: NetName=Net+24v_1 Pin=BR1-1
+Added Net: Name=Net+24v_1
+Added Pin To Net: NetName=Net-24v_1 Pin=-24v-1
+Added Pin To Net: NetName=Net-24v_1 Pin=-24v-2
+Added Pin To Net: NetName=Net-24v_1 Pin=BR1-2
+Added Net: Name=Net-24v_1
+Added Class: Name=电源2.0
+Added Room: Name=电源2.0

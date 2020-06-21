@@ -1,0 +1,64 @@
+C51 COMPILER V8.06   MAIN                                                                  11/29/2018 19:13:37 PAGE 1   
+
+
+C51 COMPILER V8.06, COMPILATION OF MODULE MAIN
+OBJECT MODULE PLACED IN main.OBJ
+COMPILER INVOKED BY: C:\Keil\C51\BIN\C51.EXE main.c BROWSE DEBUG OBJECTEXTEND
+
+line level    source
+
+   1          #include <math.h>
+   2          #include "display.h"
+   3          #include "1602.h"
+   4          #include "FFT.h"
+   5          #define uchar unsigned char
+   6          #define uint unsigned int
+   7          /***************************************************/
+   8          extern struct compx                     //定义复数结构体
+   9          {
+  10                  float real;                                             /*实部*/
+  11                  float imag;                                             /*虚部*/
+  12          };
+  13          extern xdata struct compx s[ 64 ];      //FFT数据缓存放在XDATA空间
+  14          
+  15          /****************************************************
+  16          主函数:
+  17          ****************************************************/                                           
+  18          void main()                                                                     
+  19          {
+  20   1              int N=64,i;                                     //变量初始化，64点FFT运算
+  21   1              P0=0xff;
+  22   1              P2=0xff;
+  23   1              lcdInit();
+  24   1              lcdWritePic();                              //显示一个字符
+  25   1              P1ASF=0x01;                                     //P10口做AD使用
+  26   1              P1M0 = 0x01;                    //0000，0001用于A/D转换的P1.x口，先设为开漏
+  27   1              P1M1 = 0x01;                    //0000，0001 P1.0先设为开漏。断开内部上拉电阻                                                                                                     
+  28   1              while(1)
+  29   1              {                                       
+  30   2                      for(i=0;i<N;i++)                                //采集64点音频信号
+  31   2                      { 
+  32   3                              ADC_CONTR=0xC8;                                 //40.96K采样率  设置ADC_CONTR第5、6位，具体参考说明书
+  33   3                              while(!(ADC_CONTR&0x10));
+  34   3                              s[i].real=(float)ADC_RES*4+(float)(ADC_RESL);//存入采集值        //ＡＤ结果高８位左移２位，低２位不变，然后相
+             -加
+  35   3                              s[i].imag=0;
+  36   3                      }  
+  37   2                      FFT(s,N);                                       //调用FFT函数进行变换
+  38   2                      showbar();                                                      //显示频谱                                      
+  39   2              }
+  40   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =    189    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----       4
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

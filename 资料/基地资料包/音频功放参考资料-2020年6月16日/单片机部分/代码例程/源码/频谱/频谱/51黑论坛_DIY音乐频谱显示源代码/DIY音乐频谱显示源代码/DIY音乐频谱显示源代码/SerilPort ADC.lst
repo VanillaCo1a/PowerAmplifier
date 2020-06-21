@@ -1,0 +1,14 @@
+C51 COMPILER V9.01   SERILPORT_ADC                                                         03/13/2011 16:00:28 PAGE 1   
+
+
+C51 COMPILER V9.01, COMPILATION OF MODULE SERILPORT_ADC
+OBJECT MODULE PLACED IN .\Hex\SerilPort ADC.obj
+COMPILER INVOKED BY: C:\Program Files X\Keil\C51\BIN\C51.EXE src\FFTCode\SerilPort ADC.c LARGE OPTIMIZE(9,SPEED) BROWSE 
+                    -DEBUG OBJECTEXTEND CODE LISTINCLUDE SYMBOLS PRINT(.\SerilPort ADC.lst) PREPRINT(.\SerilPort ADC.i) OBJECT(.\Hex\SerilPor
+                    -t ADC.obj)
+
+line level    source
+
+*** ERROR C318 OF src\FFTCode\SerilPort ADC.c: can't open file 'src\FFTCode\SerilPort ADC.c'
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  1 ERROR(S)

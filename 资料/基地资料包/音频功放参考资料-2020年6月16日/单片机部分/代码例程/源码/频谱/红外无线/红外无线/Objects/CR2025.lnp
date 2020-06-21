@@ -1,0 +1,4 @@
+".\Objects\STARTUP.obj",
+".\Objects\CR2025.obj" 
+TO ".\Objects\CR2025" 
+PRINT(".\Listings\CR2025.m51") RAMSIZE(256) 

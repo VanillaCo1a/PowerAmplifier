@@ -1,0 +1,177 @@
+C51 COMPILER V9.54   CR2025                                                                04/27/2019 11:06:13 PAGE 1   
+
+
+C51 COMPILER V9.54, COMPILATION OF MODULE CR2025
+OBJECT MODULE PLACED IN .\Objects\CR2025.obj
+COMPILER INVOKED BY: D:\Program Files (x86)\keil\C51\BIN\C51.EXE CR2025.c OPTIMIZE(8,SPEED) BROWSE DEBUG OBJECTEXTEND PR
+                    -INT(.\Listings\CR2025.lst) TABS(2) OBJECT(.\Objects\CR2025.obj)
+
+line level    source
+
+   1          #include<reg52.h>    //包含单片机寄存器的头文件
+   2          #include<intrins.h> //包含_nop_()函数定义的头文件
+   3          #define uchar unsigned char
+   4          #define uint  unsigned int
+   5          
+   6          
+   7          sbit IRIN=P3^2;         //红外接收器数据线
+   8          
+   9          
+  10          sbit led1=P1^0;
+  11          sbit led2=P1^1;
+  12          sbit led3=P1^2;
+  13          sbit led4=P1^3;
+  14          sbit led5=P1^4;
+  15          sbit led6=P1^5;
+  16          sbit led7=P1^6;
+  17          sbit led8=P1^7;
+  18          
+  19          uchar IRCOM[7];
+  20          
+  21          void delay(unsigned char x) ;
+  22          
+  23          /*******************************************************************/
+  24          void main()
+  25          {
+  26   1         unsigned int  a;
+  27   1         
+  28   1        IRIN=1;                    //I/O口初始化  
+  29   1        IE=0x81;                 //允许总中断中断,使能 INT0 外部中断
+  30   1        TCON=TCON|0x01;               //触发方式为脉冲负边沿触发
+  31   1        
+  32   1         while(1)
+  33   1         {    
+  34   2            for(a=100;a>0;a--)
+  35   2         {
+  36   3           void IR_IN();
+  37   3         }  
+  38   2          }
+  39   1      } 
+  40          /**********************************************************/
+  41          void IR_IN() interrupt 0 using 0
+  42          {
+  43   1        unsigned char j,k,N=0;
+  44   1        unsigned char q=0;
+  45   1        EX0 = 0;   
+  46   1        delay(15);
+  47   1        if (IRIN==1) 
+  48   1        { 
+  49   2          EX0 =1;
+  50   2          return;
+  51   2        } 
+  52   1                   //确认IR信号出现
+  53   1        while (!IRIN)            //等IR变为高电平，跳过9ms的前导低电平信号。
+  54   1          delay(1);
+C51 COMPILER V9.54   CR2025                                                                04/27/2019 11:06:13 PAGE 2   
+
+  55   1        
+  56   1        for (j=0;j<4;j++)         //收集四组数据
+  57   1        { 
+  58   2          for (k=0;k<8;k++)        //每组数据有8位
+  59   2          {
+  60   3            while (IRIN)            //等 IR 变为低电平，跳过4.5ms的前导高电平信号。
+  61   3            {delay(1);}
+  62   3            while (!IRIN)          //等 IR 变为高电平
+  63   3              delay(1);
+  64   3            while (IRIN)           //计算IR高电平时长
+  65   3            {
+  66   4              delay(1);
+  67   4              N++;           
+  68   4              if (N>=30)
+  69   4              { 
+  70   5                EX0=1;
+  71   5                return;
+  72   5              }                  //0.14ms计数过长自动离开。
+  73   4            }                        //高电平计数完毕                
+  74   3            IRCOM[j]=IRCOM[j] >> 1;     //数据最高位补“0”
+  75   3            if(N>=8)
+  76   3            {
+  77   4              IRCOM[j] = IRCOM[j] | 0x80;     //数据最高位补“1”
+  78   4            }  
+  79   3            N=0;
+  80   3          }
+  81   2        }
+  82   1        
+  83   1        if(IRCOM[2]!=~IRCOM[3])
+  84   1        { 
+  85   2          EX0=1;
+  86   2          return; 
+  87   2        }
+  88   1        
+  89   1        IRCOM[5]=IRCOM[2] & 0x0F;     //取键码的低四位
+  90   1        IRCOM[6]=IRCOM[2] >> 4;       //右移4次，高四位变为低四位
+  91   1        
+  92   1        if(IRCOM[5]>9)
+  93   1        { 
+  94   2          IRCOM[5]=IRCOM[5]+0x37;
+  95   2        }
+  96   1        else
+  97   1        IRCOM[5]=IRCOM[5]+0x30;
+  98   1        
+  99   1        if(IRCOM[6]>9)
+ 100   1        { 
+ 101   2          IRCOM[6]=IRCOM[6]+0x37;
+ 102   2        }
+ 103   1        else
+ 104   1        IRCOM[6]=IRCOM[6]+0x30;
+ 105   1      
+ 106   1        q= (((IRCOM[6]&0x0f)<<4) + (IRCOM[5]&0x0f));
+ 107   1          
+ 108   1      
+ 109   1        switch(q)    //判断按键键码值
+ 110   1        {
+ 111   2          case 0x04:led1=1;led2=0;led3=1;led4=0;led5=1;led6=0;led7=1;led8=0;break;  //（#）
+ 112   2          case 0x19:led1=0;break;  //（0）
+ 113   2          case 0x40:led5=0;break;  //（5）
+ 114   2          case 0x43:led6=0;break;  //（6）
+ 115   2          case 0x44:led4=0;break;  //（4）
+ 116   2          case 0x45:led1=0;break;  //（1）
+C51 COMPILER V9.54   CR2025                                                                04/27/2019 11:06:13 PAGE 3   
+
+ 117   2          case 0x46:led2=0;break;  //（2）
+ 118   2          case 0x47:led3=0;break;  //（3）
+ 119   2          case 0x07:led7=0;break;  //（7）
+ 120   2          case 0x18:led1=0;led2=0;led3=1;led4=1;led5=1;led6=1;led7=1;led8=1;break;  //（上）
+ 121   2          case 0x09:led1=0;led2=0;led3=0;led4=0;led5=0;led6=0;led7=0;led8=0;break;  //（9）
+ 122   2          case 0x08:led1=1;led2=1;led3=1;led4=1;led5=0;led6=0;led7=1;led8=1;break;  //（左）
+ 123   2          case 0x13:led1=1;led2=1;led3=1;led4=1;led5=1;led6=1;led7=1;led8=1;break;  //（ok）
+ 124   2          case 0x51:led1=1;led2=1;led3=1;led4=1;led5=1;led6=1;led7=0;led8=0;break;  //（右）
+ 125   2          case 0x15:led8=0;break;  //（8）
+ 126   2          case 0x52:led1=1;led2=1;led3=0;led4=0;led5=1;led6=1;led7=1;led8=1;break;  //（下）
+ 127   2          case 0x16:led1=0;led2=1;led3=0;led4=1;led5=0;led6=1;led7=0;led8=1;break;  // （*）
+ 128   2        
+ 129   2          default :break; 
+ 130   2        }
+ 131   1      
+ 132   1         EX0 = 1; 
+ 133   1      }
+ 134          
+ 135          
+ 136          /***************延时函数*****************************/
+ 137          void delay(unsigned char x)    //x*0.14MS
+ 138          {
+ 139   1        unsigned char i;
+ 140   1        while(x--)
+ 141   1        {
+ 142   2          for (i = 0; i<13; i++) {}
+ 143   2        }
+ 144   1      }
+ 145          
+ 146          
+ 147          
+ 148          
+ 149          
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =    481    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =      7       4
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

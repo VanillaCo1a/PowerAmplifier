@@ -1,0 +1,10 @@
+Output: Report Single Pin Nets
+Type  : SinglePinNetReporter
+From  : Variant [[No Variations]] of Project [51control.PrjPcb]
+   Generated File[51control.REP]
+
+
+Files Generated   : 1
+Documents Printed : 0
+
+Finished Output Generation At 19:17:27 On 2019/5/5

@@ -1,0 +1,27 @@
+Bill of Material for 
+On 2019/5/5 at 17:36:31
+
+ Comment             Pattern     Quantity  Components
+------------------------------------------------------------------------------
+ 104                 CAP2             1    C5                                                
+ 10k                 AXIAL0.5         1    R3                           电阻                   
+ 10uf                CAO1             1    C4                                                
+ 10uf                CAO2             1    C6                                                
+ 11.0592Mhz          XTAL1            1    C3                                                
+ 1602                1602             1    LCD1                                              
+ 1k                  AXIAL0.5         3    R1, R2, R4                   电阻                   
+ 30pf                CAP2             2    C1, C2                                            
+ AD                  SIP-1            1    J6                           Connector            
+ CON2                sip-2            1    J4                           Connector            
+ CON3                sip-3            2    J1, J5                       Connector            
+ CON4                sip-4            3    J2, J3, JLed1                Connector            
+ GND_TEST            sip-4            1    J9                           Connector            
+ LED                 LED2_B           2    D1, D2                                            
+ PRES1               RP1              1    PR1                                               
+ RPOT-1              RVR-2            1    R？1                          普通电位器                
+ STC89C52RC-DIP40    DIP-40SJ         1    X1                                                
+ SW-DPDT             SWH8*8           1    S7                                                
+ SW-PB               SW6*6            6    S1, S2, S3, S4, S5, S6                            
+ TEST                SIP-1            1    J7                           Connector            
+ VCC_TEST            sip-4            1    J8                           Connector            
+ 接线端子                接线端子             2    Pin1, Pout1                                       

@@ -1,0 +1,10 @@
+Removed Pin From Net: NetName=GND Pin=J2-1
+Removed Pin From Net: NetName=TXD Pin=J2-2
+Removed Pin From Net: NetName=LED5 Pin=J2-3
+Removed Pin From Net: NetName=VCC Pin=J2-4
+Change Component DesignItemId : Designator=J2 Old DesignItemId=CON4 New DesignItemId=CON2
+Change Component Footprint: Designator=J2 Old Footprint=sip-4 New Footprint=sip-2
+Change Component Comment : Designator=J2 Old Comment=CON4 New Comment=CON2
+Added Pin To Net: NetName=TXD Pin=J2-1
+Added Pin To Net: NetName=LED5 Pin=J2-2
+Added Room: Name=51control

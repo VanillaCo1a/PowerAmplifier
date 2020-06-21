@@ -1,0 +1,186 @@
+BL51 BANKED LINKER/LOCATER V6.22                                                        04/27/2019  11:50:54  PAGE 1
+
+
+BL51 BANKED LINKER/LOCATER V6.22, INVOKED BY:
+D:\PROGRAM FILES (X86)\KEIL\C51\BIN\BL51.EXE UART0_app.obj TO UART0_app RAMSIZE (256)
+
+
+MEMORY MODEL: SMALL
+
+
+INPUT MODULES INCLUDED:
+  UART0_app.obj (UART0_APP)
+  D:\PROGRAM FILES (X86)\KEIL\C51\LIB\C51S.LIB (?C_STARTUP)
+
+
+LINK MAP OF MODULE:  UART0_app (UART0_APP)
+
+
+            TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
+            -----------------------------------------------------
+
+            * * * * * * *   D A T A   M E M O R Y   * * * * * * *
+            REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
+            DATA    0008H     0002H     UNIT         ?DT?UART0_APP
+                    000AH     0016H                  *** GAP ***
+            BIT     0020H.0   0000H.1   UNIT         ?BI?UART0_APP
+                    0020H.1   0000H.7                *** GAP ***
+            IDATA   0021H     0001H     UNIT         ?STACK
+
+            * * * * * * *  X D A T A   M E M O R Y  * * * * * * *
+            XDATA   0000H     0080H     UNIT         ?XD?UART0_APP
+
+            * * * * * * *   C O D E   M E M O R Y   * * * * * * *
+            CODE    0000H     0003H     ABSOLUTE     
+                    0003H     0008H                  *** GAP ***
+            CODE    000BH     0003H     ABSOLUTE     
+                    000EH     0015H                  *** GAP ***
+            CODE    0023H     0003H     ABSOLUTE     
+                    0026H     07DAH                  *** GAP ***
+            CODE    0800H     0037H     UNIT         ?PR?UART0_RCV?UART0_APP
+            CODE    0837H     002AH     UNIT         ?PR?MAIN?UART0_APP
+            CODE    0861H     0019H     UNIT         ?PR?UART0_INIT?UART0_APP
+            CODE    087AH     0015H     UNIT         ?PR?TIMER0_INIT?UART0_APP
+            CODE    088FH     000DH     UNIT         ?PR?TIMER0?UART0_APP
+            CODE    089CH     000CH     UNIT         ?C_C51STARTUP
+            CODE    08A8H     000AH     UNIT         ?PR?_UART0_TXBYTE?UART0_APP
+
+
+
+OVERLAY MAP OF MODULE:   UART0_app (UART0_APP)
+
+
+SEGMENT
+  +--> CALLED SEGMENT
+---------------------
+?C_C51STARTUP
+  +--> ?PR?MAIN?UART0_APP
+
+?PR?MAIN?UART0_APP
+  +--> ?PR?TIMER0_INIT?UART0_APP
+  +--> ?PR?UART0_INIT?UART0_APP
+BL51 BANKED LINKER/LOCATER V6.22                                                      04/27/2019  11:50:54  PAGE 2
+
+
+  +--> ?PR?_UART0_TXBYTE?UART0_APP
+
+
+
+SYMBOL TABLE OF MODULE:  UART0_app (UART0_APP)
+
+  VALUE           TYPE          NAME
+  ----------------------------------
+
+  -------         MODULE        UART0_APP
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  D:0090H         PUBLIC        P1
+  C:0861H         PUBLIC        uart0_init
+  B:00A8H.7       PUBLIC        EA
+  B:00A8H.4       PUBLIC        ES
+  X:0000H         PUBLIC        RX0_Buffer
+  B:0098H.0       PUBLIC        RI
+  B:0098H.1       PUBLIC        TI
+  D:0008H         PUBLIC        uart0_rd
+  C:0837H         PUBLIC        main
+  D:0099H         PUBLIC        SBUF
+  D:0087H         PUBLIC        PCON
+  C:08A8H         PUBLIC        _UART0_TxByte
+  D:0098H         PUBLIC        SCON
+  D:0089H         PUBLIC        TMOD
+  D:0009H         PUBLIC        uart0_wr
+  C:0800H         PUBLIC        UART0_RCV
+  B:0090H.0       PUBLIC        P_PULSE
+  B:0020H.0       PUBLIC        B_TI
+  B:00A8H.1       PUBLIC        ET0
+  C:087AH         PUBLIC        Timer0_init
+  D:008CH         PUBLIC        TH0
+  D:008DH         PUBLIC        TH1
+  D:008AH         PUBLIC        TL0
+  C:088FH         PUBLIC        timer0
+  B:0088H.4       PUBLIC        TR0
+  B:0088H.6       PUBLIC        TR1
+  -------         PROC          _UART0_TXBYTE
+  D:0007H         SYMBOL        dat
+  C:08A8H         LINE#         75
+  C:08A8H         LINE#         76
+  C:08A8H         LINE#         77
+  C:08AAH         LINE#         78
+  C:08ACH         LINE#         79
+  C:08AFH         LINE#         80
+  C:08B1H         LINE#         81
+  -------         ENDPROC       _UART0_TXBYTE
+  -------         PROC          MAIN
+  C:0837H         LINE#         83
+  C:0837H         LINE#         84
+  C:0837H         LINE#         86
+  C:083AH         LINE#         87
+  C:083DH         LINE#         91
+  C:083DH         LINE#         92
+  C:083DH         LINE#         93
+  C:0843H         LINE#         94
+  C:0843H         LINE#         95
+BL51 BANKED LINKER/LOCATER V6.22                                                      04/27/2019  11:50:54  PAGE 3
+
+
+  C:0853H         LINE#         96
+  C:085FH         LINE#         97
+  C:085FH         LINE#         98
+  -------         ENDPROC       MAIN
+  -------         PROC          TIMER0_INIT
+  C:087AH         LINE#         112
+  C:087AH         LINE#         113
+  C:087AH         LINE#         119
+  C:0882H         LINE#         120
+  C:0885H         LINE#         121
+  C:0888H         LINE#         127
+  C:088AH         LINE#         128
+  C:088CH         LINE#         129
+  C:088EH         LINE#         130
+  -------         ENDPROC       TIMER0_INIT
+  -------         PROC          TIMER0
+  C:088FH         LINE#         143
+  C:088FH         LINE#         146
+  C:0891H         LINE#         147
+  C:0894H         LINE#         148
+  C:0897H         LINE#         149
+  C:0899H         LINE#         152
+  C:089BH         LINE#         153
+  -------         ENDPROC       TIMER0
+  -------         PROC          UART0_INIT
+  C:0861H         LINE#         156
+  C:0861H         LINE#         157
+  C:0861H         LINE#         158
+  C:0864H         LINE#         159
+  C:0867H         LINE#         160
+  C:086AH         LINE#         161
+  C:0872H         LINE#         162
+  C:0875H         LINE#         163
+  C:0877H         LINE#         164
+  C:0879H         LINE#         165
+  -------         ENDPROC       UART0_INIT
+  -------         PROC          UART0_RCV
+  C:0800H         LINE#         169
+  C:0808H         LINE#         171
+  C:080BH         LINE#         172
+  C:080BH         LINE#         173
+  C:080DH         LINE#         174
+  C:081BH         LINE#         175
+  C:0827H         LINE#         176
+  C:0827H         LINE#         178
+  C:082AH         LINE#         179
+  C:082AH         LINE#         180
+  C:082CH         LINE#         181
+  C:082EH         LINE#         182
+  C:082EH         LINE#         183
+  -------         ENDPROC       UART0_RCV
+  -------         ENDMOD        UART0_APP
+
+******************************************************************************
+* RESTRICTED VERSION WITH 0800H BYTE CODE SIZE LIMIT; USED: 00ACH BYTE ( 8%) *
+******************************************************************************
+
+BL51 BANKED LINKER/LOCATER V6.22                                                      04/27/2019  11:50:54  PAGE 4
+
+
+Program Size: data=11.1 xdata=128 code=187
+LINK/LOCATE RUN COMPLETE.  0 WARNING(S),  0 ERROR(S)

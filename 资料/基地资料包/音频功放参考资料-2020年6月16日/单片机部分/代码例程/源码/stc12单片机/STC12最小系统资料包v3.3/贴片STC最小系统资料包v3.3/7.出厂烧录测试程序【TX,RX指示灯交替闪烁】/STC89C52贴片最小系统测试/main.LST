@@ -1,0 +1,57 @@
+C51 COMPILER V9.54   MAIN                                                                  05/11/2019 13:00:57 PAGE 1   
+
+
+C51 COMPILER V9.54, COMPILATION OF MODULE MAIN
+OBJECT MODULE PLACED IN main.OBJ
+COMPILER INVOKED BY: D:\Program Files (x86)\keil\C51\BIN\C51.EXE main.c OPTIMIZE(8,SPEED) BROWSE DEBUG OBJECTEXTEND TABS
+                    -(2)
+
+line level    source
+
+   1          #include "main.h"
+   2          
+   3          //定义变量
+   4          unsigned char temp = 0xfe;
+   5          unsigned char KEY_NUM = 0;
+   6          
+   7          //****************************************************
+   8          //主函数
+   9          //****************************************************
+  10          void main()
+  11          {
+  12   1        while(1)
+  13   1        {
+  14   2          LED1 = 0;
+  15   2          LED2 = 1;
+  16   2          Delay_ms(1000);
+  17   2          LED1 = 1;
+  18   2          LED2 = 0;
+  19   2          Delay_ms(1000);
+  20   2      
+  21   2          
+  22   2        }
+  23   1      }
+  24          //****************************************************
+  25          //MS延时函数(12M晶振下测试)
+  26          //****************************************************
+  27          void Delay_ms(unsigned int n)
+  28          {
+  29   1        unsigned int  i,j;
+  30   1        for(i=0;i<n;i++)
+  31   1          for(j=0;j<123;j++);
+  32   1      }
+  33          
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =     56    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =      2    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

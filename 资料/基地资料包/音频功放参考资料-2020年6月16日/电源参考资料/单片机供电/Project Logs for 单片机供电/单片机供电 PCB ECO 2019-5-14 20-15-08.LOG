@@ -1,0 +1,5 @@
+Added Component: Designator=GNDout(2P-200)
+Added Pin To Net: NetName=GND Pin=GNDout-1
+Added Pin To Net: NetName=GND Pin=GNDout-2
+Added Member To Class: ClassName=单片机供电 Member=Component GNDout CON2
+Added Room: Name=单片机供电

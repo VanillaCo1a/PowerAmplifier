@@ -1,0 +1,118 @@
+C51 COMPILER V8.06   1602                                                                  11/29/2018 19:11:49 PAGE 1   
+
+
+C51 COMPILER V8.06, COMPILATION OF MODULE 1602
+OBJECT MODULE PLACED IN 1602.OBJ
+COMPILER INVOKED BY: C:\Keil\C51\BIN\C51.EXE 1602.c BROWSE DEBUG OBJECTEXTEND
+
+line level    source
+
+   1          #include "STC12c5a60s2.H"
+   2          #include "1602.h"
+   3          sbit busyFlag = P0^7;
+   4          /***********************************************/
+   5          //自定义的8个字符 分别为第1横格到8横格
+   6          uchar code Pic[8][8]=
+   7          {
+   8                  {0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x1f},
+   9                  {0x00,0x00,0x00,0x00,0x00,0x00,0x1f,0x1f},
+  10                  {0x00,0x00,0x00,0x00,0x00,0x00,0x1f,0x1f},
+  11                  {0x00,0x00,0x00,0x00,0x1f,0x00,0x1f,0x1f},
+  12                  {0x00,0x00,0x00,0x1f,0x1f,0x00,0x1f,0x1f},
+  13                  {0x00,0x00,0x00,0x1f,0x1f,0x00,0x1f,0x1f},
+  14                  {0x00,0x1f,0x00,0x1f,0x1f,0x00,0x1f,0x1f},
+  15                  {0x1f,0x1f,0x00,0x1f,0x1f,0x00,0x1f,0x1f},
+  16          };
+  17          /*********检查LCD忙****************************/
+  18          void lcdCheckbusy()                             
+  19          { 
+  20   1              lcdDb=0xff;
+  21   1              lcdRs=0;                                                //dc=1为数据,=0为命令.
+  22   1              lcdRw=1;                                                //rw=1为读,=0为写.
+  23   1              lcdE=1;                                                 //cs=1选通.
+  24   1              delay40us(1);
+  25   1              while(busyFlag);
+  26   1              lcdE=0;
+  27   1      }
+  28          /*******初始化函数*****************************/
+  29          void lcdInit(void)
+  30          {
+  31   1              lcdWriteCommand(0x38);                  //设置8位格式，2行，5x7
+  32   1              lcdWriteCommand(0x0c);                  //整体显示，关光标，不闪烁
+  33   1              lcdWriteCommand(0x06);                  //设定输入方式，增量不移位
+  34   1              lcdWriteCommand(0x01);                  //清除屏幕显示
+  35   1      }
+  36          /********写指令函数*****************************/
+  37          void lcdWriteCommand(uchar dat)
+  38          {
+  39   1              lcdCheckbusy();
+  40   1              lcdDb=dat;
+  41   1              lcdRs=0;                                        //指令
+  42   1              lcdRw=0;                                        //写入
+  43   1              lcdE=1;                                         //允许
+  44   1              delay40us(1);
+  45   1              lcdE=0;
+  46   1      }
+  47          /********写数据函数*****************************/
+  48          void lcdWriteData(uchar dat)
+  49          {
+  50   1              lcdCheckbusy();
+  51   1              lcdDb=dat;
+  52   1              lcdRs=1;                                //数据
+  53   1              lcdRw=0;                                //写入
+  54   1              lcdE=1;                                 //允许
+  55   1              lcdE=0;
+C51 COMPILER V8.06   1602                                                                  11/29/2018 19:11:49 PAGE 2   
+
+  56   1      }
+  57          /********写入CGRAM "自定义" 字符***************/
+  58          void lcdWritePic()
+  59          {
+  60   1              uchar i,j;
+  61   1              for(i=0;i<8;i++)
+  62   1               {
+  63   2                      lcdWriteCommand(0x40+i*8); //指令地址为0100 0000 +（0000 0000~0011 1000）具体参考说明书CGRAM的使用
+  64   2                      for(j=0;j<8;j++)lcdWriteData(Pic[i][j]);//向CGRAM写入字型编码数据(CGRAM数据).
+  65   2               }
+  66   1      }
+  67          /*******************************************************
+  68          功能：显示一个字符
+  69          函数参数 ： 显示坐标（x,y,dat）范围 (0~f,0~1,0~7)
+  70          *******************************************************/
+  71          void dispString(uchar x,uchar y,uchar dat)//dat范围是0~7，表示显示8个自定义字符的第几个
+  72          {
+  73   1              uchar address;
+  74   1              switch (y)
+  75   1              {
+  76   2                      case 0:  address=0x80+x;  //00000000B（00H）+10000000B(80H)=10000000B(80H)
+  77   2                              break;
+  78   2                      case 1:  address=0xc0+x;  //01000000B（40H）+10000000B(80H)=11000000B(C0H)
+  79   2                              break;
+  80   2              }
+  81   1              lcdWriteCommand(address);         //地址显示
+  82   1              lcdWriteData(dat);                        //显示自定义的第几个字符
+  83   1      }
+  84          /********延时函数 1T 22.1148M***************/
+  85          void delay40us(uint n)
+  86          {
+  87   1              uchar a,b;
+  88   1              while(n--)
+  89   1              {    
+  90   2              for(b=185;b>0;b--)
+  91   2                      for(a=1;a>0;a--);
+  92   2              }
+  93   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =    203    ----
+   CONSTANT SIZE    =     64    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----       6
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

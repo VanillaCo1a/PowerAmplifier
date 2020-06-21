@@ -1,0 +1,40 @@
+<html>
+<body>
+<pre>
+<h1>µVision Build Log</h1>
+<h2>Project:</h2>
+C:\Users\Amy\Desktop\4line\1602Mode4line.uvproj
+Project File Date:  10/24/2018
+
+<h2>Output:</h2>
+Build target 'Target 1'
+assembling STARTUP.A51...
+compiling 1602Mode4line.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_LCDSTR?1602MODE4LINE
+Program Size: data=52.1 xdata=0 code=506
+creating hex file from "1602Mode4line"...
+"1602Mode4line" - 0 Error(s), 1 Warning(s).
+Build target 'Target 1'
+assembling STARTUP.A51...
+compiling 1602Mode4line.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?CHECK_BUSY?1602MODE4LINE
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_LCDSTR?1602MODE4LINE
+Program Size: data=52.1 xdata=0 code=494
+creating hex file from "1602Mode4line"...
+"1602Mode4line" - 0 Error(s), 2 Warning(s).
+Build target 'Target 1'
+assembling STARTUP.A51...
+compiling 1602Mode4line.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?CHECK_BUSY?1602MODE4LINE
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_LCDSTR?1602MODE4LINE
+Program Size: data=52.1 xdata=0 code=494
+creating hex file from "1602Mode4line"...
+"1602Mode4line" - 0 Error(s), 2 Warning(s).

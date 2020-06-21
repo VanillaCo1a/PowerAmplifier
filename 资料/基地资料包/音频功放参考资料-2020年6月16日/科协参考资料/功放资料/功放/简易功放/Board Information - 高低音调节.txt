@@ -1,0 +1,12 @@
+Board Information Report
+Filename     : F:\校赛音频功放\参考文档\功放资料\功放\简易功放\高低音调节.PcbDoc
+Date         : 2019/3/24
+Time         : 16:39:51
+Time Elapsed : 00:00:00
+
+Routing Information
+    Routing completion, 95.83%
+    Connections, 72
+    Connections routed, 69
+    Connections remaining, 3
+count : 4

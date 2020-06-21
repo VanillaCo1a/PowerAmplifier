@@ -1,0 +1,6 @@
+"1602.obj",
+"display.obj",
+"FFT.obj",
+"main.obj" 
+TO "1602FFT" 
+RAMSIZE(256) 

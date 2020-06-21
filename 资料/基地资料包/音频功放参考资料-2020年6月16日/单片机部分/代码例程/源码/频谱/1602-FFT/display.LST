@@ -1,0 +1,93 @@
+C51 COMPILER V8.06   DISPLAY                                                               11/29/2018 19:11:51 PAGE 1   
+
+
+C51 COMPILER V8.06, COMPILATION OF MODULE DISPLAY
+OBJECT MODULE PLACED IN display.OBJ
+COMPILER INVOKED BY: C:\Keil\C51\BIN\C51.EXE display.c BROWSE DEBUG OBJECTEXTEND
+
+line level    source
+
+   1          #include        "display.h"
+   2          #include        "1602.h"
+   3          #define uchar unsigned char
+   4          #define uint unsigned int
+   5          /******************************************************************/
+   6          xdata struct compx s[ 64 ];                     //FFT数据缓存放在XDATA空间
+   7          extern float pow   (float x, float y);  //计算x的y次幂
+   8          extern float cos   (float val);
+   9          extern float sin   (float val);                                         
+  10          float sqrt  (float val);                                //计算一个非负实数的平方根
+  11          extern struct compx                             //定义复数结构体
+  12          {
+  13                  float real;     /*实部*/
+  14                  float imag;     /*虚部*/
+  15          };
+  16          
+  17          /*******************************************************************
+  18          显示频谱函数
+  19          LCD1602显示方式：从下往上，从左往右
+  20          j=1     
+  21          j=2              
+  22          ******************************************************************/
+  23          void showbar(void)
+  24          {
+  25   1              uchar i,j,dat1,dat2;
+  26   1              uint  tmp1=0,tmp2=0;  // 系数
+  27   1      
+  28   1              for(i=1;i<32;i+=4)
+  29   1              {
+  30   2                      float t0=0,t2=0;
+  31   2                      t0=sqrt(pow((s[i  ].real+s[i+1].real),2)+pow((s[i  ].imag+s[i+1].imag),2))/2;
+  32   2                      t2=sqrt(pow((s[i+2].real+s[i+3].real),2)+pow((s[i+2].imag+s[i+3].imag),2))/2;
+  33   2                      //z=a+bi  ∣z∣=√（a^2+b^2)
+  34   2                      //求变换后结果的模值，存入复数的实部部分
+  35   2                      tmp1=(uint)(t0/2); //放大倍数，可改变
+  36   2                      tmp2=(uint)(t2/2);
+  37   2                      for(j=2;j>0;j--)
+  38   2                      {                                                         //dat范围是0~7，表示显示8个自定义字符的第几个
+  39   3                              if (tmp1>=8)              //满格 第0(j=0)层第dat1格，第1(j=1)层第tmp1格
+  40   3                              {
+  41   4                                      dat1=7;
+  42   4                                      tmp1=tmp1-8;
+  43   4                              }                       
+  44   3                              else  
+  45   3                                      if(tmp1==0) dat1=32;                    //空格 大于15小于33都为空格 0x10~0x20为空字符
+  46   3                                              else                                                            
+  47   3                                               {
+  48   4                                                       dat1=tmp1-1;                   //1-8格
+  49   4                                                       tmp1=0;
+  50   4                                               }
+  51   3                                                      
+  52   3                              dispString(i/2,j-1,dat1);          //第1、2、5、7、9、11、13、15列       //32/4=8                                                          
+  53   3                              if (tmp2>=8)                               //满格
+  54   3                              {
+  55   4                                      dat2=7;
+C51 COMPILER V8.06   DISPLAY                                                               11/29/2018 19:11:51 PAGE 2   
+
+  56   4                                      tmp2=tmp2-8;
+  57   4                              }                       
+  58   3                              else  
+  59   3                                      if(tmp2==0) dat2=32;            //空格
+  60   3                                              else 
+  61   3                                               {
+  62   4                                                       dat2=tmp2-1;           //1-8格
+  63   4                                                       tmp2=0;
+  64   4                                               }                                                                                      
+  65   3                              dispString(i/2+1,j-1,dat2);    //第2、4、6、8、10、12、14、16列
+  66   3                      }                                               
+  67   2              }
+  68   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =    597    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =    512    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----      16
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

@@ -1,0 +1,5 @@
+".\Hex\prj.obj",
+".\Hex\STARTUP.obj" 
+TO ".\Hex\Prj" REGFILE (.\Hex\Prj.ORC) 
+PRINT(".\Prj.m51") IXREF 
+RAMSIZE(256) 

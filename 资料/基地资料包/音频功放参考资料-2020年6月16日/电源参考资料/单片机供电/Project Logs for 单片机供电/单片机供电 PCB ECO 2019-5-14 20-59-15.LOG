@@ -1,0 +1,3 @@
+Change Component Footprint: Designator=排针1 Old Footprint=2P-200 New Footprint=sip-2
+Change Component Footprint: Designator=排针2 Old Footprint=2P-200 New Footprint=sip-2
+Added Room: Name=单片机供电

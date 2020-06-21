@@ -1,0 +1,17 @@
+Change Component Footprint: Designator=C2 Old Footprint=CAO1 New Footprint=CAO5
+Added Pin To Net: NetName=GND Pin=104-1
+Added Pin To Net: NetName=GND Pin=7818-2
+Added Pin To Net: NetName=GND Pin=7918-1
+Added Pin To Net: NetName=GND Pin=C1-2
+Added Pin To Net: NetName=GND Pin=C2-2
+Added Pin To Net: NetName=GND Pin=C3-2
+Added Pin To Net: NetName=GND Pin=C5-1
+Added Pin To Net: NetName=GND Pin=C6-1
+Added Pin To Net: NetName=GND Pin=C14-2
+Added Pin To Net: NetName=GND Pin=C16-1
+Added Pin To Net: NetName=GND Pin=GND2-1
+Added Pin To Net: NetName=GND Pin=GND2-2
+Added Pin To Net: NetName=GND Pin=GND-1
+Added Pin To Net: NetName=GND Pin=GND-2
+Added Net: Name=GND
+Added Room: Name=µÁ‘¥2.0

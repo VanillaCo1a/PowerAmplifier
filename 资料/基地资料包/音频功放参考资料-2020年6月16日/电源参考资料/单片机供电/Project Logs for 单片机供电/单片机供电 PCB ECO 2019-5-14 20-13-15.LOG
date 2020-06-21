@@ -1,0 +1,9 @@
+Added Component: Designator=GND(2P-200)
+Added Pin To Net: NetName=Net+5_1 Pin=+5-2
+Added Pin To Net: NetName=Net-5_1 Pin=-5-2
+Added Pin To Net: NetName=GND Pin=GND-1
+Added Pin To Net: NetName=GND Pin=GND-2
+Change Net Name : Old Net Name=Net+5_1 New Net Name=5
+Change Net Name : Old Net Name=Net-5_1 New Net Name=-5
+Added Member To Class: ClassName=单片机供电 Member=Component GND CON2
+Added Room: Name=单片机供电

@@ -1,0 +1,4 @@
+Added Component: Designator=R7(AXIAL0.4)
+Added Pin To Net: NetName=NetC8_2 Pin=R7-1
+Added Pin To Net: NetName=NetC4_2 Pin=R7-2
+Added Member To Class: ClassName=高低音调节原理图 Member=Component R7 2k

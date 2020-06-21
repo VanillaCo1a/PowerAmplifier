@@ -1,0 +1,49 @@
+Net Status Report
+Filename     : E:\其他\已完成\校赛音频功放\数字电路\电路3\PCB_Project\PCB2.PcbDoc
+Date         : 2019/7/14
+Time         : 7:48:21
+Time Elapsed : 00:00:00
+
+Nets, Layer, Length
+    -5V, Signal Layers Only, 0mils
+    5V, Signal Layers Only, 0mils
+    GND, Signal Layers Only, 0mils
+    Net1_1, Signal Layers Only, 0mils
+    Net1_2, Signal Layers Only, 0mils
+    NetC1_1, Signal Layers Only, 0mils
+    NetC1_2, Signal Layers Only, 0mils
+    NetC2_1, Signal Layers Only, 0mils
+    NetC2_2, Signal Layers Only, 0mils
+    NetC3_1, Signal Layers Only, 0mils
+    NetC3_2, Signal Layers Only, 0mils
+    NetC4_1, Signal Layers Only, 0mils
+    NetC4_2, Signal Layers Only, 226.53mils
+    NetC5_1, Signal Layers Only, 0mils
+    NetC6_1, Signal Layers Only, 0mils
+    NetC7_2, Signal Layers Only, 0mils
+    NetC8_1, Signal Layers Only, 0mils
+    NetCD1_10, Signal Layers Only, 0mils
+    NetCD1_16, Signal Layers Only, 0mils
+    NetCD1_9, Signal Layers Only, 0mils
+    NetD1_1, Signal Layers Only, 0mils
+    NetD2_1, Signal Layers Only, 0mils
+    NetD2_2, Signal Layers Only, 0mils
+    NetD3_2, Signal Layers Only, 0mils
+    NetD4_2, Signal Layers Only, 0mils
+    NetD5_2, Signal Layers Only, 0mils
+    NetJ11_1, Signal Layers Only, 0mils
+    NetJ13_1, Signal Layers Only, 0mils
+    NetJ13_2, Signal Layers Only, 0mils
+    NetJ13_3, Signal Layers Only, 0mils
+    NetR10_2, Signal Layers Only, 0mils
+    NetR11_2, Signal Layers Only, 0mils
+    NetR12_2, Signal Layers Only, 0mils
+    NetR13_2, Signal Layers Only, 0mils
+    NetR14_2, Signal Layers Only, 0mils
+    NetR15_2, Signal Layers Only, 0mils
+    NetR5_2, Signal Layers Only, 0mils
+    NetR6_2, Signal Layers Only, 0mils
+    NetR7_2, Signal Layers Only, 0mils
+    NetR9_2, Signal Layers Only, 0mils
+    OUT1, Signal Layers Only, 393.678mils
+count : 41

@@ -1,0 +1,12 @@
+Change Component Footprint: Designator=C3 Old Footprint=CAO3 New Footprint=CAO4
+Change Component Footprint: Designator=C4 Old Footprint=CAO3 New Footprint=CAO4
+Change Component Footprint: Designator=C5 Old Footprint=CAO3 New Footprint=CAO4
+Change Component Footprint: Designator=C6 Old Footprint=CAO3 New Footprint=CAO4
+Change Component Footprint: Designator=C7 Old Footprint=CAO3 New Footprint=CAO4
+Change Component Footprint: Designator=C8 Old Footprint=CAO3 New Footprint=CAO4
+Change Component Footprint: Designator=C11 Old Footprint=CAO3 New Footprint=CAO4
+Change Component Footprint: Designator=C12 Old Footprint=CAO3 New Footprint=CAO4
+Change Component Footprint: Designator=C13 Old Footprint=CAO3 New Footprint=CAO4
+Change Component Footprint: Designator=C14 Old Footprint=CAO3 New Footprint=CAO4
+Change Component Footprint: Designator=C16 Old Footprint=CAO3 New Footprint=CAO4
+Added Room: Name=单片机供电

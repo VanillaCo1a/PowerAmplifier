@@ -1,0 +1,21 @@
+<html>
+<body>
+<pre>
+<h1>礦ision Build Log</h1>
+<h2>Project:</h2>
+G:\视频教程\12864频谱\源代码\6\6.uvproj
+Project File Date:  03/20/2016
+
+<h2>Output:</h2>
+Build target 'Target 1'
+compiling 6.c...
+linking...
+Program Size: data=106.1 xdata=1655 code=9446
+creating hex file from "6"...
+"6" - 0 Error(s), 0 Warning(s).
+Build target 'Target 1'
+compiling 6.c...
+linking...
+Program Size: data=106.1 xdata=1655 code=9446
+creating hex file from "6"...
+"6" - 0 Error(s), 0 Warning(s).

@@ -1,0 +1,4 @@
+"STARTUP.obj",
+"1602Mode4line.obj" 
+TO "1602Mode4line" 
+RAMSIZE(256) 
