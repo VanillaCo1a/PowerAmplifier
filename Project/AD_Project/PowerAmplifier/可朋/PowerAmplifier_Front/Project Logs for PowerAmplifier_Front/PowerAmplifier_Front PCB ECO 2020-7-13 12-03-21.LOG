@@ -1,0 +1,11 @@
+Removed Pin From Net: NetName=-20V Pin=JC1-1
+Removed Pin From Net: NetName=GND Pin=JC1-2
+Removed Pin From Net: NetName=+20V Pin=JC2-1
+Removed Pin From Net: NetName=GND Pin=JC2-2
+Removed Member From Class: ClassName=PowerAmplifier_Front Member=JC1
+Removed Member From Class: ClassName=PowerAmplifier_Front Member=JC2
+Added Component: Designator=J2(CON_2PIN)
+Added Pin To Net: NetName=-20V Pin=J2-1
+Added Pin To Net: NetName=GND Pin=J2-2
+Added Member To Class: ClassName=PowerAmplifier_Front Member=Component J2 CON_2PIN
+Added Room: Name=PowerAmplifier_Front

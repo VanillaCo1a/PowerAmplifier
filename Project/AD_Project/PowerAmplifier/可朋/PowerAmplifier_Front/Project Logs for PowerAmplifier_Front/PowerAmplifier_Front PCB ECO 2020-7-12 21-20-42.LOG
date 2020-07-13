@@ -1,0 +1,5 @@
+Change Component Footprint: Designator=C1 Old Footprint=RB.08/.12 New Footprint=RB.1/.2
+Change Component Footprint: Designator=C3 Old Footprint=RB.08/.12 New Footprint=RB.1/.2
+Change Component Footprint: Designator=C6 Old Footprint=RB.08/.12 New Footprint=RB.1/.2
+Change Component Footprint: Designator=C20 Old Footprint=RB.08/.12 New Footprint=RB.1/.2
+Added Room: Name=PowerAmplifier_Front

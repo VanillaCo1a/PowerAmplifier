@@ -1,0 +1,7 @@
+Removed Pin From Net: NetName=GND Pin=C21-1
+Removed Pin From Net: NetName=+20V Pin=C21-2
+Change Component DesignItemId : Designator=C21 Old DesignItemId=Cap New DesignItemId=CAP1
+Change Component Footprint: Designator=C21 Old Footprint=CAPR2.54-5.1x3.2 New Footprint=RAD0.15
+Added Pin To Net: NetName=+20V Pin=C21-1
+Added Pin To Net: NetName=GND Pin=C21-2
+Added Room: Name=PowerAmplifier_Front

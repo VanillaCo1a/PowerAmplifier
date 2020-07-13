@@ -1,0 +1,2 @@
+Removed Pin From Net: NetName=GND Pin=CON1-2
+Removed Member From Class: ClassName=PowerAmplifier_Control Member=CON1

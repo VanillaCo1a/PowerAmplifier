@@ -1,0 +1,22 @@
+Removed Pin From Net: NetName=GND Pin=GND-1
+Removed Pin From Net: NetName=GND Pin=GND-2
+Removed Pin From Net: NetName=GND Pin=GND-3
+Removed Pin From Net: NetName=GND Pin=GND-4
+Removed Pin From Net: NetName=+5V Pin=VCC-1
+Removed Pin From Net: NetName=+5V Pin=VCC-2
+Removed Pin From Net: NetName=+5V Pin=VCC-3
+Removed Pin From Net: NetName=+5V Pin=VCC-4
+Added Component: Designator=CON0(DC-005P)
+Added Pin To Net: NetName=GND Pin=CON0-0
+Added Pin To Net: NetName=GND Pin=CON0-0
+Added Pin To Net: NetName=GND Pin=CON0-0
+Added Pin To Net: NetName=GND Pin=CON0-0
+Added Pin To Net: NetName=+5V Pin=CON0-1
+Added Pin To Net: NetName=GND Pin=CON0-2
+Added Pin To Net: NetName=IN0 Pin=PH1-1
+Added Pin To Net: NetName=IN1 Pin=PH2-1
+Added Pin To Net: NetName=IN2 Pin=PH3-1
+Added Pin To Net: NetName=IN3 Pin=PH4-1
+Added Pin To Net: NetName=OUT Pin=PH5-1
+Added Member To Class: ClassName=PowerAmplifier_Control Member=Component CON0 5.5*2.1
+Added Room: Name=PowerAmplifier_Control

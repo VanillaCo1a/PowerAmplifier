@@ -1,0 +1,5 @@
+Change Component Footprint: Designator=C1 Old Footprint=RB.1/.2 New Footprint=RB.08/.12
+Change Component Footprint: Designator=C3 Old Footprint=RB.1/.2 New Footprint=RB.08/.12
+Change Component Footprint: Designator=C6 Old Footprint=RB.1/.2 New Footprint=RB.08/.12
+Added Member To Class: ClassName=PowerAmplifier_Front Member=Component R4 1k
+Added Room: Name=PowerAmplifier_Front

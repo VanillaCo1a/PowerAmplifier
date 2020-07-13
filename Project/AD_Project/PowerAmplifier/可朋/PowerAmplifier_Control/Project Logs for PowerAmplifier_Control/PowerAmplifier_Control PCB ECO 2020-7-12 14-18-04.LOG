@@ -1,0 +1,385 @@
+Added Component: Designator=89C52(DIP-40_LS15.24-L52.58-W13.97-PITCH2.54)
+Added Component: Designator=Bluetooth(sip-6)
+Added Component: Designator=C1(1206)
+Added Component: Designator=C2(1206)
+Added Component: Designator=C3(1206)
+Added Component: Designator=C4(1206)
+Added Component: Designator=C5(1206)
+Added Component: Designator=CJ1(CAO1)
+Added Component: Designator=CJ2(CAO1)
+Added Component: Designator=CJ3(CAO1)
+Added Component: Designator=CJ4(CAO1)
+Added Component: Designator=CJ5(CAO1)
+Added Component: Designator=CJ6(CAO1)
+Added Component: Designator=Ct1(1206)
+Added Component: Designator=Ct2(1206)
+Added Component: Designator=Ct3(1206)
+Added Component: Designator=Ct4(1206)
+Added Component: Designator=GND(sip-4)
+Added Component: Designator=LCD1602(1602)
+Added Component: Designator=LED0(LED_1206)
+Added Component: Designator=LED1(LED_1206)
+Added Component: Designator=LED2(LED_1206)
+Added Component: Designator=LED3(LED_1206)
+Added Component: Designator=LED4(LED_1206)
+Added Component: Designator=LED5(LED_1206)
+Added Component: Designator=LED6(LED_1206)
+Added Component: Designator=LED7(LED_1206)
+Added Component: Designator=LED8(LED_1206)
+Added Component: Designator=LED9(LED_1206)
+Added Component: Designator=LED10(LED_1206)
+Added Component: Designator=LED11(LED_1206)
+Added Component: Designator=LED12(LED_1206)
+Added Component: Designator=PH1(POHENJACK STEREO SW)
+Added Component: Designator=PH2(POHENJACK STEREO SW)
+Added Component: Designator=PH3(POHENJACK STEREO SW)
+Added Component: Designator=PH4(POHENJACK STEREO SW)
+Added Component: Designator=PH5(POHENJACK STEREO SW)
+Added Component: Designator=PR1(RP1)
+Added Component: Designator=PR2(RP1)
+Added Component: Designator=R0(AXIAL0.4)
+Added Component: Designator=R1(AXIAL0.4)
+Added Component: Designator=R2(AXIAL0.4)
+Added Component: Designator=R3(AXIAL0.4)
+Added Component: Designator=R4(AXIAL0.4)
+Added Component: Designator=R5(AXIAL0.4)
+Added Component: Designator=R6(AXIAL0.4)
+Added Component: Designator=R7(AXIAL0.4)
+Added Component: Designator=R8(AXIAL0.4)
+Added Component: Designator=R9(AXIAL0.4)
+Added Component: Designator=R10(AXIAL0.4)
+Added Component: Designator=R11(AXIAL0.4)
+Added Component: Designator=R12(AXIAL0.4)
+Added Component: Designator=RP1(3296W)
+Added Component: Designator=SW0(SWH7*7)
+Added Component: Designator=SW1(TSW DIP-6*6*6)
+Added Component: Designator=U1(DIP-20_L26.8-W6.4-P2.54-LS7.6-BL)
+Added Component: Designator=U2(DIP-16_L19.8-W6.5-P2.54-LS7.6-BL)
+Added Component: Designator=U3(MSOP10_N)
+Added Component: Designator=U4(DIP-16_L20.0-W6.4-P2.54-LS7.6-BL)
+Added Component: Designator=U5(DIP-16_L20.0-W6.4-P2.54-LS7.6-BL)
+Added Component: Designator=VCC(sip-4)
+Added Component: Designator=Y1(OSC HC-49S)
+Added Pin To Net: NetName=P1.0 Pin=89C52-1
+Added Pin To Net: NetName=P1.1 Pin=89C52-2
+Added Pin To Net: NetName=P1.2 Pin=89C52-3
+Added Pin To Net: NetName=P1.3 Pin=89C52-4
+Added Pin To Net: NetName=P1.4 Pin=89C52-5
+Added Pin To Net: NetName=P1.5 Pin=89C52-6
+Added Pin To Net: NetName=P1.6 Pin=89C52-7
+Added Pin To Net: NetName=P1.7 Pin=89C52-8
+Added Pin To Net: NetName=Net89C52_9 Pin=89C52-9
+Added Pin To Net: NetName=RXD Pin=89C52-10
+Added Pin To Net: NetName=TXD Pin=89C52-11
+Added Pin To Net: NetName=P3.2 Pin=89C52-12
+Added Pin To Net: NetName=P3.3 Pin=89C52-13
+Added Pin To Net: NetName=P3.4 Pin=89C52-14
+Added Pin To Net: NetName=P3.5 Pin=89C52-15
+Added Pin To Net: NetName=P3.6 Pin=89C52-16
+Added Pin To Net: NetName=P3.7 Pin=89C52-17
+Added Pin To Net: NetName=Net89C52_18 Pin=89C52-18
+Added Pin To Net: NetName=Net89C52_19 Pin=89C52-19
+Added Pin To Net: NetName=GND Pin=89C52-20
+Added Pin To Net: NetName=P2.0 Pin=89C52-21
+Added Pin To Net: NetName=P2.1 Pin=89C52-22
+Added Pin To Net: NetName=P2.2 Pin=89C52-23
+Added Pin To Net: NetName=P2.3 Pin=89C52-24
+Added Pin To Net: NetName=P2.4 Pin=89C52-25
+Added Pin To Net: NetName=P2.5 Pin=89C52-26
+Added Pin To Net: NetName=P2.6 Pin=89C52-27
+Added Pin To Net: NetName=P2.7 Pin=89C52-28
+Added Pin To Net: NetName=VCC Pin=89C52-31
+Added Pin To Net: NetName=P0.7 Pin=89C52-32
+Added Pin To Net: NetName=P0.6 Pin=89C52-33
+Added Pin To Net: NetName=P0.5 Pin=89C52-34
+Added Pin To Net: NetName=P0.4 Pin=89C52-35
+Added Pin To Net: NetName=P0.3 Pin=89C52-36
+Added Pin To Net: NetName=P0.2 Pin=89C52-37
+Added Pin To Net: NetName=P0.1 Pin=89C52-38
+Added Pin To Net: NetName=P0.0 Pin=89C52-39
+Added Pin To Net: NetName=VCC Pin=89C52-40
+Added Pin To Net: NetName=STATE Pin=Bluetooth-1
+Added Pin To Net: NetName=TXD Pin=Bluetooth-2
+Added Pin To Net: NetName=RXD Pin=Bluetooth-3
+Added Pin To Net: NetName=GND Pin=Bluetooth-4
+Added Pin To Net: NetName=VCC Pin=Bluetooth-5
+Added Pin To Net: NetName=EN Pin=Bluetooth-6
+Added Pin To Net: NetName=Net89C52_19 Pin=C1-1
+Added Pin To Net: NetName=GND Pin=C1-2
+Added Pin To Net: NetName=Net89C52_18 Pin=C2-1
+Added Pin To Net: NetName=GND Pin=C2-2
+Added Pin To Net: NetName=GND Pin=C3-1
+Added Pin To Net: NetName=VCC Pin=C3-2
+Added Pin To Net: NetName=TOU5 Pin=C4-1
+Added Pin To Net: NetName=GND Pin=C4-2
+Added Pin To Net: NetName=OUT Pin=C5-1
+Added Pin To Net: NetName=GND Pin=C5-2
+Added Pin To Net: NetName=VCC Pin=CJ1-1
+Added Pin To Net: NetName=Net89C52_9 Pin=CJ1-2
+Added Pin To Net: NetName=IN0 Pin=CJ2-1
+Added Pin To Net: NetName=NetCJ2_2 Pin=CJ2-2
+Added Pin To Net: NetName=IN3 Pin=CJ3-1
+Added Pin To Net: NetName=NetCJ3_2 Pin=CJ3-2
+Added Pin To Net: NetName=IN2 Pin=CJ4-1
+Added Pin To Net: NetName=NetCJ4_2 Pin=CJ4-2
+Added Pin To Net: NetName=IN1 Pin=CJ5-1
+Added Pin To Net: NetName=NetCJ5_2 Pin=CJ5-2
+Added Pin To Net: NetName=TOU5 Pin=CJ6-1
+Added Pin To Net: NetName=NetCJ6_2 Pin=CJ6-2
+Added Pin To Net: NetName=TOUCH1 Pin=Ct1-1
+Added Pin To Net: NetName=GND Pin=Ct1-2
+Added Pin To Net: NetName=TOUCH2 Pin=Ct2-1
+Added Pin To Net: NetName=GND Pin=Ct2-2
+Added Pin To Net: NetName=TOUCH3 Pin=Ct3-1
+Added Pin To Net: NetName=GND Pin=Ct3-2
+Added Pin To Net: NetName=TOUCH4 Pin=Ct4-1
+Added Pin To Net: NetName=GND Pin=Ct4-2
+Added Pin To Net: NetName=GND Pin=GND-1
+Added Pin To Net: NetName=GND Pin=GND-2
+Added Pin To Net: NetName=GND Pin=GND-3
+Added Pin To Net: NetName=GND Pin=GND-4
+Added Pin To Net: NetName=GND Pin=LCD1602-1
+Added Pin To Net: NetName=VCC Pin=LCD1602-2
+Added Pin To Net: NetName=NetLCD1602_3 Pin=LCD1602-3
+Added Pin To Net: NetName=P1.1 Pin=LCD1602-4
+Added Pin To Net: NetName=P1.2 Pin=LCD1602-5
+Added Pin To Net: NetName=P1.3 Pin=LCD1602-6
+Added Pin To Net: NetName=P0.0 Pin=LCD1602-7
+Added Pin To Net: NetName=P0.1 Pin=LCD1602-8
+Added Pin To Net: NetName=P0.2 Pin=LCD1602-9
+Added Pin To Net: NetName=P0.3 Pin=LCD1602-10
+Added Pin To Net: NetName=P0.4 Pin=LCD1602-11
+Added Pin To Net: NetName=P0.5 Pin=LCD1602-12
+Added Pin To Net: NetName=P0.6 Pin=LCD1602-13
+Added Pin To Net: NetName=P0.7 Pin=LCD1602-14
+Added Pin To Net: NetName=VCC Pin=LCD1602-15
+Added Pin To Net: NetName=GND Pin=LCD1602-16
+Added Pin To Net: NetName=NetLED0_1 Pin=LED0-1
+Added Pin To Net: NetName=GND Pin=LED0-2
+Added Pin To Net: NetName=NetLED1_1 Pin=LED1-1
+Added Pin To Net: NetName=L1 Pin=LED1-2
+Added Pin To Net: NetName=NetLED2_1 Pin=LED2-1
+Added Pin To Net: NetName=NetLED2_2 Pin=LED2-2
+Added Pin To Net: NetName=NetLED3_1 Pin=LED3-1
+Added Pin To Net: NetName=NetLED3_2 Pin=LED3-2
+Added Pin To Net: NetName=NetLED4_1 Pin=LED4-1
+Added Pin To Net: NetName=NetLED4_2 Pin=LED4-2
+Added Pin To Net: NetName=NetLED5_1 Pin=LED5-1
+Added Pin To Net: NetName=NetLED5_2 Pin=LED5-2
+Added Pin To Net: NetName=NetLED6_1 Pin=LED6-1
+Added Pin To Net: NetName=NetLED6_2 Pin=LED6-2
+Added Pin To Net: NetName=NetLED7_1 Pin=LED7-1
+Added Pin To Net: NetName=NetLED7_2 Pin=LED7-2
+Added Pin To Net: NetName=NetLED8_1 Pin=LED8-1
+Added Pin To Net: NetName=NetLED8_2 Pin=LED8-2
+Added Pin To Net: NetName=NetLED9_1 Pin=LED9-1
+Added Pin To Net: NetName=NetLED9_2 Pin=LED9-2
+Added Pin To Net: NetName=NetLED9_1 Pin=LED10-1
+Added Pin To Net: NetName=NetLED10_2 Pin=LED10-2
+Added Pin To Net: NetName=NetLED9_1 Pin=LED11-1
+Added Pin To Net: NetName=NetLED11_2 Pin=LED11-2
+Added Pin To Net: NetName=NetLED9_1 Pin=LED12-1
+Added Pin To Net: NetName=NetLED12_2 Pin=LED12-2
+Added Pin To Net: NetName=IN0 Pin=PH1-4
+Added Pin To Net: NetName=GND Pin=PH1-5
+Added Pin To Net: NetName=IN1 Pin=PH2-4
+Added Pin To Net: NetName=GND Pin=PH2-5
+Added Pin To Net: NetName=IN2 Pin=PH3-4
+Added Pin To Net: NetName=GND Pin=PH3-5
+Added Pin To Net: NetName=IN3 Pin=PH4-4
+Added Pin To Net: NetName=GND Pin=PH4-5
+Added Pin To Net: NetName=OUT Pin=PH5-4
+Added Pin To Net: NetName=GND Pin=PH5-5
+Added Pin To Net: NetName=VCC Pin=PR1-1
+Added Pin To Net: NetName=P0.0 Pin=PR1-2
+Added Pin To Net: NetName=P0.1 Pin=PR1-3
+Added Pin To Net: NetName=P0.2 Pin=PR1-4
+Added Pin To Net: NetName=P0.3 Pin=PR1-5
+Added Pin To Net: NetName=P0.4 Pin=PR1-6
+Added Pin To Net: NetName=P0.5 Pin=PR1-7
+Added Pin To Net: NetName=P0.6 Pin=PR1-8
+Added Pin To Net: NetName=P0.7 Pin=PR1-9
+Added Pin To Net: NetName=VCC Pin=PR2-1
+Added Pin To Net: NetName=NetLED1_1 Pin=PR2-2
+Added Pin To Net: NetName=NetLED2_1 Pin=PR2-3
+Added Pin To Net: NetName=NetLED3_1 Pin=PR2-4
+Added Pin To Net: NetName=NetLED4_1 Pin=PR2-5
+Added Pin To Net: NetName=NetLED5_1 Pin=PR2-6
+Added Pin To Net: NetName=NetLED6_1 Pin=PR2-7
+Added Pin To Net: NetName=NetLED7_1 Pin=PR2-8
+Added Pin To Net: NetName=NetLED8_1 Pin=PR2-9
+Added Pin To Net: NetName=NetLED0_1 Pin=R0-1
+Added Pin To Net: NetName=VCC Pin=R0-2
+Added Pin To Net: NetName=GND Pin=R1-1
+Added Pin To Net: NetName=Net89C52_9 Pin=R1-2
+Added Pin To Net: NetName=NetLED9_1 Pin=R2-1
+Added Pin To Net: NetName=VCC Pin=R2-2
+Added Pin To Net: NetName=GND Pin=R3-1
+Added Pin To Net: NetName=TOU5 Pin=R3-2
+Added Pin To Net: NetName=GND Pin=R4-1
+Added Pin To Net: NetName=OUT Pin=R4-2
+Added Pin To Net: NetName=IO2.0 Pin=R5-1
+Added Pin To Net: NetName=NetCJ6_2 Pin=R5-2
+Added Pin To Net: NetName=IO2.1 Pin=R6-1
+Added Pin To Net: NetName=NetCJ6_2 Pin=R6-2
+Added Pin To Net: NetName=IO2.2 Pin=R7-1
+Added Pin To Net: NetName=NetCJ6_2 Pin=R7-2
+Added Pin To Net: NetName=IO2.3 Pin=R8-1
+Added Pin To Net: NetName=NetCJ6_2 Pin=R8-2
+Added Pin To Net: NetName=IO2.4 Pin=R9-1
+Added Pin To Net: NetName=NetCJ6_2 Pin=R9-2
+Added Pin To Net: NetName=IO2.5 Pin=R10-1
+Added Pin To Net: NetName=NetCJ6_2 Pin=R10-2
+Added Pin To Net: NetName=IO2.6 Pin=R11-1
+Added Pin To Net: NetName=NetCJ6_2 Pin=R11-2
+Added Pin To Net: NetName=IO2.7 Pin=R12-1
+Added Pin To Net: NetName=NetCJ6_2 Pin=R12-2
+Added Pin To Net: NetName=GND Pin=RP1-1
+Added Pin To Net: NetName=NetLCD1602_3 Pin=RP1-2
+Added Pin To Net: NetName=VCC Pin=RP1-3
+Added Pin To Net: NetName=VCC Pin=SW0-4
+Added Pin To Net: NetName=+5V Pin=SW0-5
+Added Pin To Net: NetName=VCC Pin=SW1-3
+Added Pin To Net: NetName=Net89C52_9 Pin=SW1-4
+Added Pin To Net: NetName=GND Pin=U1-1
+Added Pin To Net: NetName=P0.0 Pin=U1-2
+Added Pin To Net: NetName=P0.1 Pin=U1-3
+Added Pin To Net: NetName=P0.2 Pin=U1-4
+Added Pin To Net: NetName=P0.3 Pin=U1-5
+Added Pin To Net: NetName=P0.4 Pin=U1-6
+Added Pin To Net: NetName=P0.5 Pin=U1-7
+Added Pin To Net: NetName=P0.6 Pin=U1-8
+Added Pin To Net: NetName=P0.7 Pin=U1-9
+Added Pin To Net: NetName=GND Pin=U1-10
+Added Pin To Net: NetName=P1.0 Pin=U1-11
+Added Pin To Net: NetName=DS Pin=U1-12
+Added Pin To Net: NetName=OE Pin=U1-13
+Added Pin To Net: NetName=STCP Pin=U1-14
+Added Pin To Net: NetName=SHCP Pin=U1-15
+Added Pin To Net: NetName=NetLED12_2 Pin=U1-16
+Added Pin To Net: NetName=NetLED11_2 Pin=U1-17
+Added Pin To Net: NetName=NetLED10_2 Pin=U1-18
+Added Pin To Net: NetName=NetLED9_2 Pin=U1-19
+Added Pin To Net: NetName=VCC Pin=U1-20
+Added Pin To Net: NetName=NetLED2_2 Pin=U2-1
+Added Pin To Net: NetName=NetLED3_2 Pin=U2-2
+Added Pin To Net: NetName=NetLED4_2 Pin=U2-3
+Added Pin To Net: NetName=NetLED5_2 Pin=U2-4
+Added Pin To Net: NetName=NetLED6_2 Pin=U2-5
+Added Pin To Net: NetName=NetLED7_2 Pin=U2-6
+Added Pin To Net: NetName=NetLED8_2 Pin=U2-7
+Added Pin To Net: NetName=GND Pin=U2-8
+Added Pin To Net: NetName=VCC Pin=U2-10
+Added Pin To Net: NetName=SHCP Pin=U2-11
+Added Pin To Net: NetName=STCP Pin=U2-12
+Added Pin To Net: NetName=OE Pin=U2-13
+Added Pin To Net: NetName=DS Pin=U2-14
+Added Pin To Net: NetName=L1 Pin=U2-15
+Added Pin To Net: NetName=VCC Pin=U2-16
+Added Pin To Net: NetName=VCC Pin=U3-1
+Added Pin To Net: NetName=TOUCH1 Pin=U3-2
+Added Pin To Net: NetName=TOUCH2 Pin=U3-3
+Added Pin To Net: NetName=TOUCH3 Pin=U3-4
+Added Pin To Net: NetName=TOUCH4 Pin=U3-5
+Added Pin To Net: NetName=P1.7 Pin=U3-6
+Added Pin To Net: NetName=P1.6 Pin=U3-7
+Added Pin To Net: NetName=P1.5 Pin=U3-8
+Added Pin To Net: NetName=P1.4 Pin=U3-9
+Added Pin To Net: NetName=GND Pin=U3-10
+Added Pin To Net: NetName=TOU5 Pin=U4-3
+Added Pin To Net: NetName=GND Pin=U4-6
+Added Pin To Net: NetName=GND Pin=U4-7
+Added Pin To Net: NetName=GND Pin=U4-8
+Added Pin To Net: NetName=P2.1 Pin=U4-9
+Added Pin To Net: NetName=P2.2 Pin=U4-10
+Added Pin To Net: NetName=P2.3 Pin=U4-11
+Added Pin To Net: NetName=NetCJ2_2 Pin=U4-12
+Added Pin To Net: NetName=NetCJ3_2 Pin=U4-13
+Added Pin To Net: NetName=NetCJ4_2 Pin=U4-14
+Added Pin To Net: NetName=NetCJ5_2 Pin=U4-15
+Added Pin To Net: NetName=VCC Pin=U4-16
+Added Pin To Net: NetName=IO2.4 Pin=U5-1
+Added Pin To Net: NetName=IO2.6 Pin=U5-2
+Added Pin To Net: NetName=OUT Pin=U5-3
+Added Pin To Net: NetName=IO2.7 Pin=U5-4
+Added Pin To Net: NetName=IO2.5 Pin=U5-5
+Added Pin To Net: NetName=GND Pin=U5-6
+Added Pin To Net: NetName=GND Pin=U5-7
+Added Pin To Net: NetName=GND Pin=U5-8
+Added Pin To Net: NetName=P2.5 Pin=U5-9
+Added Pin To Net: NetName=P2.6 Pin=U5-10
+Added Pin To Net: NetName=P2.7 Pin=U5-11
+Added Pin To Net: NetName=IO2.3 Pin=U5-12
+Added Pin To Net: NetName=IO2.0 Pin=U5-13
+Added Pin To Net: NetName=IO2.1 Pin=U5-14
+Added Pin To Net: NetName=IO2.2 Pin=U5-15
+Added Pin To Net: NetName=VCC Pin=U5-16
+Added Pin To Net: NetName=+5V Pin=VCC-1
+Added Pin To Net: NetName=+5V Pin=VCC-2
+Added Pin To Net: NetName=+5V Pin=VCC-3
+Added Pin To Net: NetName=+5V Pin=VCC-4
+Added Pin To Net: NetName=Net89C52_18 Pin=Y1-1
+Added Pin To Net: NetName=Net89C52_19 Pin=Y1-2
+Added Member To Class: ClassName=PowerAmplifier_Control Member=Component 89C52 STC89C52RC-40I
+Added Member To Class: ClassName=PowerAmplifier_Control Member=Component Bluetooth HEADER1
+Added Member To Class: ClassName=PowerAmplifier_Control Member=Component C1 30pf
+Added Member To Class: ClassName=PowerAmplifier_Control Member=Component C2 30pf
+Added Member To Class: ClassName=PowerAmplifier_Control Member=Component C3 0.1uf
+Added Member To Class: ClassName=PowerAmplifier_Control Member=Component C4 30pf
+Added Member To Class: ClassName=PowerAmplifier_Control Member=Component C5 30pf
+Added Member To Class: ClassName=PowerAmplifier_Control Member=Component CJ1 10uf
+Added Member To Class: ClassName=PowerAmplifier_Control Member=Component CJ2 22uf
+Added Member To Class: ClassName=PowerAmplifier_Control Member=Component CJ3 22uf
+Added Member To Class: ClassName=PowerAmplifier_Control Member=Component CJ4 22uf
+Added Member To Class: ClassName=PowerAmplifier_Control Member=Component CJ5 22uf
+Added Member To Class: ClassName=PowerAmplifier_Control Member=Component CJ6 22uf
+Added Member To Class: ClassName=PowerAmplifier_Control Member=Component Ct1 22uf
+Added Member To Class: ClassName=PowerAmplifier_Control Member=Component Ct2 22uf
+Added Member To Class: ClassName=PowerAmplifier_Control Member=Component Ct3 22uf
+Added Member To Class: ClassName=PowerAmplifier_Control Member=Component Ct4 22uf
+Added Member To Class: ClassName=PowerAmplifier_Control Member=Component GND CON1
+Added Member To Class: ClassName=PowerAmplifier_Control Member=Component LCD1602 1602
+Added Member To Class: ClassName=PowerAmplifier_Control Member=Component LED0 LED_R
+Added Member To Class: ClassName=PowerAmplifier_Control Member=Component LED1 LED_R
+Added Member To Class: ClassName=PowerAmplifier_Control Member=Component LED2 LED_R
+Added Member To Class: ClassName=PowerAmplifier_Control Member=Component LED3 LED_R
+Added Member To Class: ClassName=PowerAmplifier_Control Member=Component LED4 LED_R
+Added Member To Class: ClassName=PowerAmplifier_Control Member=Component LED5 LED_R
+Added Member To Class: ClassName=PowerAmplifier_Control Member=Component LED6 LED_R
+Added Member To Class: ClassName=PowerAmplifier_Control Member=Component LED7 LED_R
+Added Member To Class: ClassName=PowerAmplifier_Control Member=Component LED8 LED_R
+Added Member To Class: ClassName=PowerAmplifier_Control Member=Component LED9 LED_R
+Added Member To Class: ClassName=PowerAmplifier_Control Member=Component LED10 LED_R
+Added Member To Class: ClassName=PowerAmplifier_Control Member=Component LED11 LED_R
+Added Member To Class: ClassName=PowerAmplifier_Control Member=Component LED12 LED_R
+Added Member To Class: ClassName=PowerAmplifier_Control Member=Component PH1 POHENJACK STEREO SW
+Added Member To Class: ClassName=PowerAmplifier_Control Member=Component PH2 POHENJACK STEREO SW
+Added Member To Class: ClassName=PowerAmplifier_Control Member=Component PH3 POHENJACK STEREO SW
+Added Member To Class: ClassName=PowerAmplifier_Control Member=Component PH4 POHENJACK STEREO SW
+Added Member To Class: ClassName=PowerAmplifier_Control Member=Component PH5 POHENJACK STEREO SW
+Added Member To Class: ClassName=PowerAmplifier_Control Member=Component PR1 10k
+Added Member To Class: ClassName=PowerAmplifier_Control Member=Component PR2 1k
+Added Member To Class: ClassName=PowerAmplifier_Control Member=Component R0 10k
+Added Member To Class: ClassName=PowerAmplifier_Control Member=Component R1 10k
+Added Member To Class: ClassName=PowerAmplifier_Control Member=Component R2 3.3k
+Added Member To Class: ClassName=PowerAmplifier_Control Member=Component R3 10k
+Added Member To Class: ClassName=PowerAmplifier_Control Member=Component R4 10k
+Added Member To Class: ClassName=PowerAmplifier_Control Member=Component R5 51
+Added Member To Class: ClassName=PowerAmplifier_Control Member=Component R6 220
+Added Member To Class: ClassName=PowerAmplifier_Control Member=Component R7 680
+Added Member To Class: ClassName=PowerAmplifier_Control Member=Component R8 1k
+Added Member To Class: ClassName=PowerAmplifier_Control Member=Component R9 3.3k
+Added Member To Class: ClassName=PowerAmplifier_Control Member=Component R10 6.8k
+Added Member To Class: ClassName=PowerAmplifier_Control Member=Component R11 15k
+Added Member To Class: ClassName=PowerAmplifier_Control Member=Component R12 27k
+Added Member To Class: ClassName=PowerAmplifier_Control Member=Component RP1 10k
+Added Member To Class: ClassName=PowerAmplifier_Control Member=Component SW0 SW-DPDT
+Added Member To Class: ClassName=PowerAmplifier_Control Member=Component SW1 6x6x5
+Added Member To Class: ClassName=PowerAmplifier_Control Member=Component U1 SN74HC573AN
+Added Member To Class: ClassName=PowerAmplifier_Control Member=Component U2 SN74HC595N
+Added Member To Class: ClassName=PowerAmplifier_Control Member=Component U3 BS814A-1
+Added Member To Class: ClassName=PowerAmplifier_Control Member=Component U4 CD4051BE
+Added Member To Class: ClassName=PowerAmplifier_Control Member=Component U5 CD4051BE
+Added Member To Class: ClassName=PowerAmplifier_Control Member=Component VCC CON0
+Added Member To Class: ClassName=PowerAmplifier_Control Member=Component Y1 11.0592MHz
+Added Room: Name=PowerAmplifier_Control

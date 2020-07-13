@@ -1,0 +1,41 @@
+Removed Pin From Net: NetName=NetC7_2 Pin=J1-1
+Removed Pin From Net: NetName=NetC7_2 Pin=J1-2
+Removed Pin From Net: NetName=NetC7_2 Pin=J2-1
+Removed Pin From Net: NetName=NetC1_1 Pin=J5-1
+Removed Pin From Net: NetName=NetC1_1 Pin=J5-2
+Removed Pin From Net: NetName=GND Pin=P1-1
+Removed Pin From Net: NetName=NetC1_1 Pin=P9-2
+Removed Member From Class: ClassName=PowerAmplifier_Front Member=J1
+Removed Member From Class: ClassName=PowerAmplifier_Front Member=J2
+Removed Member From Class: ClassName=PowerAmplifier_Front Member=J5
+Removed Member From Class: ClassName=PowerAmplifier_Front Member=P1
+Removed Member From Class: ClassName=PowerAmplifier_Front Member=P9
+Added Component: Designator=+20V(COM2-2.54)
+Added Component: Designator=-20V(COM2-2.54)
+Added Component: Designator=GND(COM2-2.54)
+Added Component: Designator=IN(COM4-2.54)
+Added Component: Designator=OUT(COM4-2.54)
+Added Pin To Net: NetName=+20V Pin=+20V-1
+Added Pin To Net: NetName=+20V Pin=+20V-2
+Added Pin To Net: NetName=-20V Pin=-20V-1
+Added Pin To Net: NetName=-20V Pin=-20V-2
+Added Pin To Net: NetName=GND Pin=GND-1
+Added Pin To Net: NetName=GND Pin=GND-2
+Added Pin To Net: NetName=NetC1_1 Pin=IN-1
+Added Pin To Net: NetName=NetC1_1 Pin=IN-2
+Added Pin To Net: NetName=NetC1_1 Pin=IN-3
+Added Pin To Net: NetName=NetC1_1 Pin=IN-4
+Added Pin To Net: NetName=NetC7_2 Pin=OUT-1
+Added Pin To Net: NetName=NetC7_2 Pin=OUT-2
+Added Pin To Net: NetName=NetC7_2 Pin=OUT-3
+Added Pin To Net: NetName=NetC7_2 Pin=OUT-4
+Added Pin To Net: NetName=NetC1_1 Pin=SW IN-1
+Added Pin To Net: NetName=NetC1_1 Pin=SW IN-4
+Added Pin To Net: NetName=NetC7_2 Pin=SW OUT-1
+Added Pin To Net: NetName=NetC7_2 Pin=SW OUT-4
+Added Member To Class: ClassName=PowerAmplifier_Front Member=Component +20V COM2-2.54
+Added Member To Class: ClassName=PowerAmplifier_Front Member=Component -20V COM2-2.54
+Added Member To Class: ClassName=PowerAmplifier_Front Member=Component GND COM2-2.54
+Added Member To Class: ClassName=PowerAmplifier_Front Member=Component IN COM4-2.54
+Added Member To Class: ClassName=PowerAmplifier_Front Member=Component OUT COM4-2.54
+Added Room: Name=PowerAmplifier_Front
