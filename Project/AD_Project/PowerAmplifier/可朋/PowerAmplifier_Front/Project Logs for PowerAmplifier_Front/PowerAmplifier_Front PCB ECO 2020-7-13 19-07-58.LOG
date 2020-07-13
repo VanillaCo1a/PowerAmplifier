@@ -1,0 +1,10 @@
+Removed Pin From Net: NetName=NetC1_1 Pin=J3-3
+Removed Pin From Net: NetName=NetC1_1 Pin=J3-4
+Removed Pin From Net: NetName=NetC7_2 Pin=J5-3
+Removed Pin From Net: NetName=NetC7_2 Pin=J5-4
+Change Component DesignItemId : Designator=J3 Old DesignItemId=CON4 New DesignItemId=CON2
+Change Component DesignItemId : Designator=J5 Old DesignItemId=CON4 New DesignItemId=CON2
+Change Component Footprint: Designator=J3 Old Footprint=sip-4 New Footprint=sip-2
+Change Component Footprint: Designator=J5 Old Footprint=sip-4 New Footprint=sip-2
+Added Member To Class: ClassName=PowerAmplifier_Front Member=Component C4 224
+Added Room: Name=PowerAmplifier_Front

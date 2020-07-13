@@ -1,0 +1,13 @@
+Change Component Designator: OldDesignator=J1 NewDesignator=JC1
+Change Component Designator: OldDesignator=J2 NewDesignator=JC2
+Added Component: Designator=J1(3.0MM)
+Added Component: Designator=J2(3.0MM)
+Added Component: Designator=J3(3.0MM)
+Added Component: Designator=J4(3.0MM)
+Added Member To Class: ClassName=PowerAmplifier_Front Member=Component J3 3.0MM
+Added Member To Class: ClassName=PowerAmplifier_Front Member=Component J4 3.0MM
+Added Member To Class: ClassName=PowerAmplifier_Front Member=Component JC1 CON_2PIN
+Added Member To Class: ClassName=PowerAmplifier_Front Member=Component JC2 CON_2PIN
+Added Member To Class: ClassName=PowerAmplifier_Front Member=Component R7 4.7k
+Added Member To Class: ClassName=PowerAmplifier_Front Member=Component R10 10k
+Added Room: Name=PowerAmplifier_Front

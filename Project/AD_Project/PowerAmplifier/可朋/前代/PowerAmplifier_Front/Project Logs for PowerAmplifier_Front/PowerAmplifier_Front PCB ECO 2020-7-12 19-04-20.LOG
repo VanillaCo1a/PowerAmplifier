@@ -1,0 +1,7 @@
+Change Component Library : Designator=C2 Old Library=51Min-system_BYKX.IntLib New Library=电子电路集成库.IntLib
+Change Component Library : Designator=C11 Old Library=51Min-system_BYKX.IntLib New Library=电子电路集成库.IntLib
+Change Component Library : Designator=C15 Old Library=51Min-system_BYKX.IntLib New Library=电子电路集成库.IntLib
+Change Component Library : Designator=C16 Old Library=51Min-system_BYKX.IntLib New Library=电子电路集成库.IntLib
+Change Component Library : Designator=C21 Old Library=51Min-system_BYKX.IntLib New Library=电子电路集成库.IntLib
+Added Member To Class: ClassName=PowerAmplifier_Front Member=Component C14 683
+Added Room: Name=PowerAmplifier_Front

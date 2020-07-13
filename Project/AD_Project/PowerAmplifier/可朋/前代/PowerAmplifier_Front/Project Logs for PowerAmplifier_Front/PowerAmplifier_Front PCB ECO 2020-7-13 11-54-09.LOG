@@ -1,0 +1,5 @@
+Change Component Footprint: Designator=R11 Old Footprint=WH148-1-G15 New Footprint=RVR-A
+Change Component Footprint: Designator=R12 Old Footprint=WH148-1-G15 New Footprint=RVR-A
+Change Component Footprint: Designator=R13 Old Footprint=WH148-1-G15 New Footprint=RVR-A
+Added Member To Class: ClassName=PowerAmplifier_Front Member=Component R12 10k
+Added Room: Name=PowerAmplifier_Front

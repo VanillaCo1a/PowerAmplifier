@@ -1,0 +1,7 @@
+Removed Pin From Net: NetName=+20V Pin=J1-1
+Removed Pin From Net: NetName=GND Pin=J1-2
+Removed Pin From Net: NetName=-20V Pin=J2-1
+Removed Pin From Net: NetName=GND Pin=J2-2
+Removed Member From Class: ClassName=PowerAmplifier_Front Member=J1
+Removed Member From Class: ClassName=PowerAmplifier_Front Member=J2
+Added Room: Name=PowerAmplifier_Front

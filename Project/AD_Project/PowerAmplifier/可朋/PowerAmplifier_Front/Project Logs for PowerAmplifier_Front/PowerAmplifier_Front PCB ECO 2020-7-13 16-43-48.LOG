@@ -1,0 +1,15 @@
+Change Component Comment : Designator=+20V Old Comment=CON2 New Comment=+20V
+Change Component Comment : Designator=-20V Old Comment=CON2 New Comment=-20V
+Change Component Comment : Designator=GND Old Comment=CON2 New Comment=GND
+Change Component Comment : Designator=JC1 Old Comment=CON_2PIN New Comment=+20V
+Change Component Comment : Designator=JC2 Old Comment=CON_2PIN New Comment=-20V
+Change Component Designator: OldDesignator=+20V NewDesignator=J1
+Change Component Designator: OldDesignator=-20V NewDesignator=J2
+Change Component Designator: OldDesignator=GND NewDesignator=J0
+Change Component Designator: OldDesignator=J1 NewDesignator=K1
+Change Component Designator: OldDesignator=J2 NewDesignator=K2
+Change Component Designator: OldDesignator=J3 NewDesignator=K3
+Change Component Designator: OldDesignator=J4 NewDesignator=K4
+Added Member To Class: ClassName=PowerAmplifier_Front Member=Component K1 3.0MM
+Added Member To Class: ClassName=PowerAmplifier_Front Member=Component K2 3.0MM
+Added Room: Name=PowerAmplifier_Front

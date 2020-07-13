@@ -1,0 +1,41 @@
+Removed Pin From Net: NetName=GND Pin=C2-1
+Removed Pin From Net: NetName=NetC2_2 Pin=C2-2
+Removed Pin From Net: NetName=NetC3_2 Pin=C11-1
+Removed Pin From Net: NetName=NetC3_1 Pin=C15-1
+Removed Pin From Net: NetName=NetC15_2 Pin=C15-2
+Removed Pin From Net: NetName=NetC4_2 Pin=C16-1
+Removed Pin From Net: NetName=GND Pin=C21-1
+Removed Pin From Net: NetName=+20V Pin=C21-2
+Change Component DesignItemId : Designator=C2 Old DesignItemId=Cap New DesignItemId=CAP1
+Change Component DesignItemId : Designator=C11 Old DesignItemId=Cap New DesignItemId=CAP1
+Change Component DesignItemId : Designator=C15 Old DesignItemId=Cap New DesignItemId=CAP1
+Change Component DesignItemId : Designator=C16 Old DesignItemId=Cap New DesignItemId=CAP1
+Change Component DesignItemId : Designator=C21 Old DesignItemId=Cap New DesignItemId=CAP1
+Change Component Footprint: Designator=C2 Old Footprint=CAPR2.54-5.1x3.2 New Footprint=RAD0.15
+Change Component Footprint: Designator=C11 Old Footprint=CAPR2.54-5.1x3.2 New Footprint=RAD0.15
+Change Component Footprint: Designator=C15 Old Footprint=CAPR2.54-5.1x3.2 New Footprint=RAD0.15
+Change Component Footprint: Designator=C16 Old Footprint=CAPR2.54-5.1x3.2 New Footprint=RAD0.15
+Change Component Footprint: Designator=C21 Old Footprint=CAPR2.54-5.1x3.2 New Footprint=RAD0.15
+Change Component Comment : Designator=C15 Old Comment=Cap New Comment=10pf
+Change Component Comment : Designator=C21 Old Comment=Cap New Comment=102
+Change Component Comment : Designator=C2 Old Comment=Cap New Comment=104
+Change Component Comment : Designator=C11 Old Comment=Cap New Comment=223
+Change Component Comment : Designator=C16 Old Comment=Cap New Comment=224
+Added Pin To Net: NetName=NetC2_2 Pin=C2-1
+Added Pin To Net: NetName=GND Pin=C2-2
+Added Pin To Net: NetName=NetC3_2 Pin=C11-2
+Added Pin To Net: NetName=NetC15_2 Pin=C15-1
+Added Pin To Net: NetName=NetC3_1 Pin=C15-2
+Added Pin To Net: NetName=NetC4_2 Pin=C16-2
+Added Pin To Net: NetName=+20V Pin=C21-1
+Added Pin To Net: NetName=GND Pin=C21-2
+Change Net Name : Old Net Name=NetC2_2 New Net Name=NetC2_1
+Change Net Name : Old Net Name=NetC15_2 New Net Name=NetC15_1
+Added Pin To Net: NetName=NetC11_1 Pin=C11-1
+Added Pin To Net: NetName=NetC11_1 Pin=R11-1
+Added Net: Name=NetC11_1
+Added Pin To Net: NetName=NetC16_1 Pin=C16-1
+Added Pin To Net: NetName=NetC16_1 Pin=R14-1
+Added Net: Name=NetC16_1
+Added Member To Class: ClassName=PowerAmplifier_Front Member=Component C14 683
+Added Room: Name=PowerAmplifier_Front

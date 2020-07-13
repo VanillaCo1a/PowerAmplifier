@@ -72,6 +72,10 @@ DItemRevisionGUID=
 GenerateClassCluster=0
 DocumentUniqueId=YFDAYUJR
 
+[GeneratedDocument1]
+DocumentPath=Project Outputs for PowerAmplifier_Front\Design Rule Check - PowerAmplifier_Front.html
+DItemRevisionGUID=
+
 [Configuration1]
 Name=Default Configuration
 ParameterCount=0

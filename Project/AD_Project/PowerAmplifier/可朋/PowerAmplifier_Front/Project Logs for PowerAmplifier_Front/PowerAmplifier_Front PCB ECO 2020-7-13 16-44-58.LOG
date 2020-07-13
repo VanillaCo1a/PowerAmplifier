@@ -1,0 +1,6 @@
+Change Component Comment : Designator=IN Old Comment=CON4 New Comment=IN
+Change Component Comment : Designator=OUT Old Comment=CON4 New Comment=OUT
+Change Component Designator: OldDesignator=IN NewDesignator=J3
+Change Component Designator: OldDesignator=OUT NewDesignator=J5
+Added Member To Class: ClassName=PowerAmplifier_Front Member=Component J1 +20V
+Added Room: Name=PowerAmplifier_Front

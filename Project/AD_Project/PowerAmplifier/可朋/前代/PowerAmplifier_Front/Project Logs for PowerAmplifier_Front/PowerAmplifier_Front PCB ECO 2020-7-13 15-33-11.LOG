@@ -1,0 +1,9 @@
+Added Component: Designator=J1(3.0MM)
+Added Component: Designator=J2(3.0MM)
+Added Component: Designator=J3(3.0MM)
+Added Component: Designator=J4(3.0MM)
+Added Member To Class: ClassName=PowerAmplifier_Front Member=Component J1 3.0MM
+Added Member To Class: ClassName=PowerAmplifier_Front Member=Component J2 3.0MM
+Added Member To Class: ClassName=PowerAmplifier_Front Member=Component J3 3.0MM
+Added Member To Class: ClassName=PowerAmplifier_Front Member=Component J4 3.0MM
+Added Room: Name=PowerAmplifier_Front

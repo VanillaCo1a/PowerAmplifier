@@ -1,0 +1,5 @@
+Added Component: Designator=J1(CON_2PIN)
+Added Pin To Net: NetName=+20V Pin=J1-1
+Added Pin To Net: NetName=GND Pin=J1-2
+Added Member To Class: ClassName=PowerAmplifier_Front Member=Component J1 CON_2PIN
+Added Room: Name=PowerAmplifier_Front

@@ -1,0 +1,12 @@
+Board Information Report
+Filename     : K:\Study\AfterClass\Github\PowerAmplifier\Project\AD_Project\PowerAmplifier\ø…≈Û\PowerAmplifier_Front\PowerAmplifier_Front.PcbDoc
+Date         : 2020/7/13
+Time         : 23:30:27
+Time Elapsed : 00:00:00
+
+Routing Information
+    Routing completion, 100.00%
+    Connections, 74
+    Connections routed, 74
+    Connections remaining, 0
+count : 4

@@ -1,0 +1,4 @@
+Change Component Footprint: Designator=R11 Old Footprint=RVR-A New Footprint=3296W
+Change Component Footprint: Designator=R12 Old Footprint=RVR-A New Footprint=3296W
+Change Component Footprint: Designator=R13 Old Footprint=RVR-A New Footprint=3296W
+Added Room: Name=PowerAmplifier_Front
